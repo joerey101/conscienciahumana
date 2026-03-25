@@ -1,0 +1,10 @@
+# Ignorar archivos de desarrollo y backups para Vercel
+transform.js
+replace_teaser.js
+index.backup.html
+WebFCHV1.2.html
+CHANGELOG.md
+README.md
+.git
+.gitignore
+.vercelignore

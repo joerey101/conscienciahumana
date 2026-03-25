@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Página no encontrada - Fundación Consciencia Humana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --violeta-deep: #3A1078;
+            --rosa: #E84393;
+            --fondo-warm: #FDF9F3;
+            --texto: #2D2A4A;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--fondo-warm);
+            color: var(--texto);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 8rem;
+            margin: 0;
+            color: var(--violeta-deep);
+            opacity: 0.8;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--rosa);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 25px rgba(232, 67, 147, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(232, 67, 147, 0.45);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Oops... parece que te saliste del camino</h2>
+        <p>No te preocupes, a veces perderse es el primer paso para encontrarse. <br>Volvé a la página principal y sigamos evolucionando juntos.</p>
+        <a href="/" class="btn">Volver al inicio</a>
+    </div>
+</body>
+</html>
