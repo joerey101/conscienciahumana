@@ -50,9 +50,9 @@ export function Alianzas() {
           </div>
         </div>
 
-        <div className="metrics-grid stagger" style={{ marginTop: '5rem', background: 'white', borderRadius: 24, boxShadow: '0 10px 40px rgba(0,0,0,0.05)', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-          <div className="reveal" style={{ textAlign: 'left', padding: '4rem 3rem', display: 'flex', flexDirection: 'column' }}>
-            <h3 style={{ fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1.5rem', height: '3rem', display: 'flex', alignItems: 'center' }}>Impacto Compartido</h3>
+        <div className="alianzas-summary-grid stagger">
+          <div className="alianzas-summary-item reveal">
+            <h3>Impacto Compartido</h3>
             <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
               <ul className="audience-list">
                 {['Mayor claridad en la toma de decisiones.', 'Equipos más alineados y comprometidos.', 'Cultura institucional fortalecida.', 'Liderazgos con coherencia y responsabilidad.'].map((item) => (
@@ -64,8 +64,8 @@ export function Alianzas() {
               </ul>
             </div>
           </div>
-          <div className="reveal" style={{ textAlign: 'left', padding: '4rem 3rem', display: 'flex', flexDirection: 'column' }}>
-            <h3 style={{ fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1.5rem', height: '3rem', display: 'flex', alignItems: 'center' }}>Criterios de Colaboración</h3>
+          <div className="alianzas-summary-item reveal">
+            <h3>Criterios de Colaboración</h3>
             <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <p style={{ fontSize: '0.95rem', color: 'var(--texto-light)', marginBottom: '1.5rem' }}>
                 Priorizamos alianzas con organizaciones que compartan valores de ética, responsabilidad social y busquen un impacto real.
@@ -75,8 +75,8 @@ export function Alianzas() {
               </div>
             </div>
           </div>
-          <div className="reveal" style={{ textAlign: 'left', background: '#F8F6FF', padding: '4rem 3.5rem', display: 'flex', flexDirection: 'column', borderRadius: '0 24px 24px 0' }}>
-            <h3 style={{ fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1.5rem', height: '3rem', display: 'flex', alignItems: 'center' }}>¿Cómo iniciar?</h3>
+          <div className="alianzas-summary-item reveal">
+            <h3>¿Cómo iniciar?</h3>
             <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <p style={{ fontSize: '0.95rem', color: 'var(--texto-light)', marginBottom: '2.5rem', lineHeight: 1.6 }}>
                 El primer paso es una reunión institucional para comprender objetivos y analizar líneas de trabajo conjunto.

@@ -28,7 +28,7 @@ export function Navbar() {
                 <use href="#petal" className="fch-petal p-yellow" fill="#FFF647" />
               </svg>
             </div>
-            <span>FCH</span>
+            <span>Fundación Consciencia Humana</span>
           </a>
           <ul className="navbar-links">
             {siteConfig.nav.map((item) => (
@@ -37,8 +37,8 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <a href="#cta-final" className="btn-cta-nav">Participar</a>
+          <div className="navbar-actions">
+            {/* CTA button removed per user request */}
           </div>
           <button className="mobile-toggle" onClick={open} aria-label="Abrir menú" style={{ color: 'var(--texto)' }}>
             <List size={24} weight="bold" />
@@ -54,7 +54,6 @@ export function Navbar() {
         {siteConfig.nav.map((item) => (
           <a key={item.href} href={item.href} onClick={close}>{item.label}</a>
         ))}
-        <a href="#cta-final" onClick={close} style={{ color: 'var(--amarillo)' }}>Participar</a>
       </div>
     </>
   )

@@ -8,9 +8,9 @@ export const siteConfig = {
     ogImage: 'https://conscienciahumana.com/img/hero-sunrise.png',
   },
   nav: [
-    { label: 'Misión', href: '#proposito' },
-    { label: 'Bitácora', href: '#bitacora' },
     { label: 'Nuestra Mirada', href: '#conversacion' },
+    { label: 'Nuestra Misión', href: '#proposito' },
+    { label: 'Bitácora', href: '#bitacora' },
     { label: 'Verticales', href: '#experiencias' },
     { label: 'Alianzas', href: '#alianzas' },
   ],
