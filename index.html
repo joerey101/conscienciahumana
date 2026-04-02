@@ -87,14 +87,15 @@
             z-index: 100;
             padding: 1.5rem 2rem;
             transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .navbar.scrolled {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar.scrolled {
             padding: 0.8rem 2rem;
-            box-shadow: 0 2px 30px rgba(58, 16, 120, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .navbar-inner {
@@ -210,6 +211,7 @@
             font-weight: 700;
             font-size: 1.1rem;
             letter-spacing: -0.02em;
+            color: var(--violeta-deep);
         }
 
         .navbar-links {
@@ -222,16 +224,33 @@
         .navbar-links a {
             font-family: 'Poppins', sans-serif;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--texto-light);
+            color: var(--violeta-deep);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rosa);
+            transition: width 0.3s;
         }
 
         .navbar-links a:hover {
-            color: var(--violeta-mid);
+            color: var(--rosa);
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
         }
 
         /* ═══════════════════════════════
@@ -587,7 +606,7 @@
             font-size: 1.1rem;
             color: var(--texto-light);
             font-weight: 300;
-            max-width: 600px;
+            max-width: 850px;
             line-height: 1.8;
         }
 
@@ -1001,13 +1020,13 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.35);
+            color: rgba(255, 255, 255, 0.9);
             flex-wrap: wrap;
             gap: 1rem;
         }
 
         .footer-bottom a {
-            color: rgba(255, 255, 255, 0.45);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -1708,13 +1727,11 @@
                 <li><a href="#bitacora">Bitácora</a></li>
                 <li><a href="#conversacion">Nuestra Mirada</a></li>
                 <li><a href="#experiencias">Verticales</a></li>
-                <li><a href="#el-salto">El Salto</a></li>
+
                 <li><a href="#alianzas">Alianzas</a></li>
             </ul>
 
             <div style="display:flex; gap:1rem; align-items:center;">
-                <a href="https://donar.fundacionfch.org" class="btn-cta-nav"
-                    style="background:var(--rosa); color:white; border:none;">Donar</a>
                 <a href="#cta-final" class="btn-cta-nav">Participar</a>
             </div>
 
@@ -1733,9 +1750,8 @@
         <a href="#bitacora" onclick="closeMobileMenu()">Bitácora</a>
         <a href="#conversacion" onclick="closeMobileMenu()">Nuestra Mirada</a>
         <a href="#experiencias" onclick="closeMobileMenu()">Verticales</a>
-        <a href="#el-salto" onclick="closeMobileMenu()">El Salto</a>
+
         <a href="#alianzas" onclick="closeMobileMenu()">Alianzas</a>
-        <a href="https://donar.fundacionfch.org" onclick="closeMobileMenu()" style="color: var(--rosa);">Donar</a>
         <a href="#cta-final" onclick="closeMobileMenu()" style="color: var(--amarillo);">Participar</a>
     </div>
 
@@ -1753,16 +1769,124 @@
             <p style="margin-top: 1rem; font-size: 1.1rem; opacity: 0.9;">Consciencia Humana le habla a quienes están
                 listos para evolucionar.</p>
             <div class="button-group" style="margin-top: 1rem;">
-                <a href="#cta-final" class="btn-hero">Quiero comenzar mi proceso</a>
-                <a href="#cuaderno" class="btn-outline-white" style="padding: 1rem 2rem; border-radius: 50px;">
-                    Cuaderno de Reflexión
-                </a>
+                <a href="mailto:contacto@conscienciahumana.com" class="btn-hero">Quiero comenzar mi proceso</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- ═══════════════════════════════════════
+         SECCIÓN: CÓMO GENERAMOS TRANSFORMACIÓN REAL
+         ═══════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════
+         SECCIÓN: LA CONVERSACIÓN QUE CAMBIA TODO (NUESTRA MIRADA)
+         ═══════════════════════════════════════ -->
+    <section class="section section-light" id="conversacion">
+        <div class="section-inner">
+            <div class="triada-intro reveal">
+                <span class="section-tag">Nuestra Mirada</span>
+                <h2 class="section-title">La conversación que cambia todo</h2>
+                <p class="section-subtitle">Proponemos reinstalar una conversación más poderosa: la que nace cuando
+                    empezás a observarte sin juicio y a responder desde tu mejor versión posible.</p>
+            </div>
+            <div class="triada-grid stagger" style="margin-top: 3rem;">
+                <div class="triada-card reveal" style="--i:0; border-top: 4px solid var(--violeta-soft);">
+                    <div class="triada-icon" style="background:rgba(107, 78, 191, 0.1); color:var(--violeta-soft);">
+                        <i class="ph-light ph-arrows-left-right"></i>
+                    </div>
+                    <h3>Reaccionar vs. Elegir</h3>
+                    <p>Existe una diferencia entre reaccionar y elegir. Entre repetir patrones y crear nuevas
+                        posibilidades.</p>
+                </div>
+                <div class="triada-card reveal" style="--i:1; border-top: 4px solid var(--rosa);">
+                    <div class="triada-icon" style="background:rgba(232, 67, 147, 0.1); color:var(--rosa);">
+                        <i class="ph-light ph-chat-centered-text"></i>
+                    </div>
+                    <h3>Conversación interna</h3>
+                    <p>No es una conversación intelectual. Es una conversación interna que redefine identidad.</p>
+                </div>
+                <div class="triada-card reveal" style="--i:2; border-top: 4px solid var(--verde);">
+                    <div class="triada-icon" style="background:rgba(0, 184, 148, 0.1); color:var(--verde);">
+                        <i class="ph-light ph-heart"></i>
+                    </div>
+                    <h3>La conversación del corazón</h3>
+                    <p>Cuando cambia la forma en que te hablás, cambia la forma en que actuás. Y cuando cambia tu
+                        acción, cambia tu realidad.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════
-          SECCIÓN: BITÁCORA DE CONSCIENCIA (INTEGRADA)
+         SECCIÓN: QUIÉNES SOMOS
+         ═══════════════════════════════════════ -->
+    <section class="section section-white" id="somos">
+        <div class="section-inner">
+            <div class="triada-intro reveal" style="margin-bottom: 3rem;">
+                <span class="section-tag">El Equipo</span>
+                <h2 class="section-title">Un equipo comprometido <br> con la consciencia aplicada</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Fundación Consciencia Humana está integrada por
+                    personas que combinan experiencia en liderazgo, acompañamiento humano y diseño de procesos de
+                    transformación. Nos une una misma intención: construir espacios donde la profundidad y la acción se
+                    encuentren.</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         SECCIÓN: NUESTRA MISIÓN
+         ═══════════════════════════════════════ -->
+    <section class="section section-light" id="proposito">
+        <div class="section-inner">
+            <div class="triada-intro reveal" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <span class="section-tag">Nuestra Misión</span>
+                <h2 class="section-title" style="margin-bottom: 4rem;">Contribuir a una sociedad <br> donde las personas
+                    se sientan <br> orgullosas de pertenecer</h2>
+
+                <div class="mission-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; padding: 0 1rem;">
+                    <div class="mission-column reveal" style="--i:0;">
+                        <div style="width: 40px; height: 3px; background: var(--rosa); margin-bottom: 2rem;"></div>
+                        <h3
+                            style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; color: var(--violeta-deep); margin-bottom: 1.2rem;">
+                            Puntos de partida</h3>
+                        <p style="font-size: 1.1rem; color: var(--texto-light); line-height: 1.8; font-weight: 300;">
+                            En Fundación Consciencia Humana creemos que cada desafío es una oportunidad para crecer y
+                            desarrollar el potencial de las personas.
+                            <strong>Nuestra misión es acompañar</strong> a individuos y organizaciones a través de
+                            espacios de formación donde se integran conocimientos, habilidades socioemocionales y
+                            experiencias que generan un impacto real.
+                        </p>
+                    </div>
+                    <div class="mission-column reveal" style="--i:1;">
+                        <div style="width: 40px; height: 3px; background: var(--amarillo); margin-bottom: 2rem;"></div>
+                        <h3
+                            style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; color: var(--violeta-deep); margin-bottom: 1.2rem;">
+                            Transformación Colectiva</h3>
+                        <p style="font-size: 1.1rem; color: var(--texto-light); line-height: 1.8; font-weight: 300;">
+                            Más allá de enseñar contenidos, buscamos impulsar procesos de transformación personal y
+                            colectiva. Trabajamos con <strong>metodologías participativas y alianzas
+                                estratégicas</strong> para que cada persona pueda convertirse en agente de cambio y cada
+                            organización adopte prácticas más humanas, colaborativas y sostenibles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+          SECCIÓN: BITÁCORA DE CONSCIENCIA (BLOG)
           ═══════════════════════════════════════ -->
     <section class="section" id="bitacora" style="background:#FDF9F3;">
         <div class="section-inner">
@@ -1852,123 +1976,8 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════
-          SECCIÓN: CUADERNO DE REFLEXIÓN (WIZARD)
-          ═══════════════════════════════════════ -->
-    <section class="section cuaderno-section" id="cuaderno">
-        <div class="section-inner">
-            <div class="triada-intro reveal" style="text-align: center; margin-bottom: 4rem;">
-                <span class="section-tag">Herramienta de Diagnóstico</span>
-                <h2 class="section-title"
-                    style="font-family:'Cormorant Garamond', serif; font-style: italic; font-size: 3.5rem;">Cuaderno de
-                    Reflexión</h2>
-                <p class="section-subtitle" style="margin: 0 auto;">10 minutos. 20 preguntas. Un diagnóstico claro para
-                    ordenar tu próximo paso. No etiqueta. No juzga. Da claridad.</p>
-            </div>
-
-            <div class="cuaderno-wizard" id="cuaderno-wizard">
-                <!-- Step 0: Intro -->
-                <div class="step-container active" id="step-0">
-                    <div style="text-align:center;">
-                        <i class="ph-bold ph-notebook"
-                            style="font-size: 4rem; color: var(--violeta-soft); margin-bottom: 2rem; display: block;"></i>
-                        <h3 style="margin-bottom:1.5rem; font-size:1.8rem;">Instrucciones de uso</h3>
-                        <p style="margin-bottom: 2rem; color: var(--texto-light);">Respondé cada ítem basándote en tu
-                            realidad actual, del 1 al 5.</p>
-
-                        <div
-                            style="background: var(--fondo-claro); padding: 2rem; border-radius: 1rem; margin-bottom: 3rem; text-align: left;">
-                            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Escala de valoración:</strong>
-                            </p>
-                            <ul style="list-style:none; padding:0; font-size: 0.9rem; display:grid; gap:0.5rem;">
-                                <li><strong>1:</strong> Nunca / Muy en desacuerdo</li>
-                                <li><strong>2:</strong> Rara vez</li>
-                                <li><strong>3:</strong> A veces</li>
-                                <li><strong>4:</strong> Frecuentemente</li>
-                                <li><strong>5:</strong> Siempre / Muy de acuerdo</li>
-                            </ul>
-                        </div>
-
-                        <button class="btn-hero" onclick="startCuaderno()" style="width: 100%; border:none;">Empezar
-                            ahora</button>
-                        <p style="font-size:0.75rem; color: var(--texto-muted); margin-top: 1.5rem;">Anónimo / Sin
-                            juicios / Para uso personal</p>
-                    </div>
-                </div>
-
-                <!-- Wizard Steps (D1-D5) will be generated by JS -->
-                <div id="wizard-steps-content"></div>
-
-                <!-- Results Step -->
-                <div class="step-container" id="step-results">
-                    <div id="cuaderno-results-content"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         SECCIÓN: NUESTRA MISIÓN
-         ═══════════════════════════════════════ -->
-    <section class="section section-white" id="proposito">
-        <div class="section-inner">
-            <div class="triada-intro reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <span class="section-tag">Nuestra Misión</span>
-                <h2 class="section-title">Contribuir a una sociedad donde las personas se sientan orgullosas de
-                    pertenecer</h2>
-                <p class="section-subtitle" style="margin: 0 auto;">Una sociedad donde el crecimiento no esté
-                    desconectado del bienestar.</p>
-                <p style="margin-top: 2rem; font-size: 1.05rem; color: var(--texto-light); font-style: italic;">
-                    Creemos que cada desafío es una oportunidad de expansión.<br>
-                    Y que el desarrollo del potencial humano es el recurso más poderoso que existe.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         SECCIÓN: LA CONVERSACIÓN QUE CAMBIA TODO
-         ═══════════════════════════════════════ -->
-    <section class="section section-light" id="conversacion">
-        <div class="section-inner">
-            <div class="triada-intro reveal">
-                <span class="section-tag">Nuestra Mirada</span>
-                <h2 class="section-title">La conversación que cambia todo</h2>
-                <p class="section-subtitle">Proponemos reinstalar una conversación más poderosa: la que nace cuando
-                    empezás a observarte sin juicio y a responder desde tu mejor versión posible.</p>
-            </div>
-            <div class="triada-grid stagger" style="margin-top: 3rem;">
-                <div class="triada-card reveal" style="--i:0; border-top: 4px solid var(--violeta-soft);">
-                    <div class="triada-icon" style="background:rgba(107, 78, 191, 0.1); color:var(--violeta-soft);">
-                        <i class="ph-light ph-arrows-left-right"></i>
-                    </div>
-                    <h3>Reaccionar vs. Elegir</h3>
-                    <p>Existe una diferencia entre reaccionar y elegir. Entre repetir patrones y crear nuevas
-                        posibilidades.</p>
-                </div>
-                <div class="triada-card reveal" style="--i:1; border-top: 4px solid var(--rosa);">
-                    <div class="triada-icon" style="background:rgba(232, 67, 147, 0.1); color:var(--rosa);">
-                        <i class="ph-light ph-chat-centered-text"></i>
-                    </div>
-                    <h3>Conversación interna</h3>
-                    <p>No es una conversación intelectual. Es una conversación interna que redefine identidad.</p>
-                </div>
-                <div class="triada-card reveal" style="--i:2; border-top: 4px solid var(--verde);">
-                    <div class="triada-icon" style="background:rgba(0, 184, 148, 0.1); color:var(--verde);">
-                        <i class="ph-light ph-heart"></i>
-                    </div>
-                    <h3>La conversación del corazón</h3>
-                    <p>Cuando cambia la forma en que te hablás, cambia la forma en que actuás. Y cuando cambia tu
-                        acción, cambia tu realidad.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <!-- ═══════════════════════════════════════
-         SECCIÓN: CÓMO GENERAMOS TRANSFORMACIÓN REAL
-         ═══════════════════════════════════════ -->
     <section class="section section-white" id="transformacion">
         <div class="section-inner">
             <div class="platform-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
@@ -2048,6 +2057,12 @@
                     listas para asumir responsabilidad sobre su impacto.</p>
                 <p style="margin-top: 2rem; color: rgba(255,255,255,0.8); font-style: italic;">No imponemos
                     transformación. La facilitamos cuando hay apertura y compromiso.</p>
+                <div style="margin-top: 3rem;">
+                    <a href="mailto:contacto@conscienciahumana.com" class="btn-rosa shadow-hover"
+                        style="padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 50px;">
+                        Coordinar reunión institucional
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -2090,6 +2105,7 @@
     <!-- ═══════════════════════════════════════
          SECCIÓN: EL SALTO DE TU VIDA (CON FOTO INTEGRADA)
          ═══════════════════════════════════════ -->
+    <!-- Ocultado temporalmente - El Salto de Tu Vida
     <section id="el-salto" class="section section-light" style="padding: 8rem 2rem;">
         <div class="section-inner" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;">
             <div class="el-salto-hero-img reveal">
@@ -2115,6 +2131,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- ═══════════════════════════════════════
          SECCIÓN 5: MÉTRICAS DE IMPACTO
@@ -2155,18 +2172,17 @@
     <!-- ═══════════════════════════════════════
           NUEVA SECCIÓN: ALIANZAS Y FINANCIAMIENTO
           ═══════════════════════════════════════ -->
-    <section class="section section-light" id="alianzas">
+    <section class="section" id="alianzas" style="background: #F0F2F5;">
         <div class="section-inner">
             <div class="triada-intro reveal">
                 <span class="section-tag">Institucional</span>
-                <h2 class="section-title">Alianzas para impulsar transformación con impacto</h2>
+                <h2 class="section-title">Alianzas que impulsan transformaciones</h2>
                 <p class="section-subtitle" style="margin: 0 auto;">Fundación Consciencia Humana trabaja junto a
                     organizaciones, empresas e instituciones que buscan promover liderazgo consciente, cultura
                     responsable y transformación sostenible.</p>
                 <div style="margin-top:2.5rem; display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
-                    <a href="https://wa.me/5491100000000" class="btn-hero"
-                        style="background:var(--violeta-mid);">Solicitar reunión institucional</a>
-                    <a href="https://donar.fundacionfch.org" class="btn-hero">Apoyar con una Donación</a>
+                    <a href="mailto:contacto@conscienciahumana.com" class="btn-rosa shadow-hover"
+                        style="padding: 1rem 2rem; border-radius: 50px;">Solicitar reunión institucional</a>
                 </div>
             </div>
 
@@ -2214,117 +2230,45 @@
             </div>
 
             <div class="metrics-grid stagger"
-                style="margin-top: 5rem; background:white; padding:3rem; border-radius:24px; box-shadow:0 10px 40px rgba(0,0,0,0.05);">
-                <div class="reveal" style="text-align:left;">
-                    <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1.5rem;">Impacto
-                        Compartido</h3>
-                    <ul class="audience-list">
-                        <li><i class="ph-fill ph-arrow-up-right"></i> <span>Mayor claridad en la toma de
-                                decisiones.</span></li>
-                        <li><i class="ph-fill ph-arrow-up-right"></i> <span>Equipos más alineados y
-                                comprometidos.</span></li>
-                        <li><i class="ph-fill ph-arrow-up-right"></i> <span>Cultura institucional fortalecida.</span>
-                        </li>
-                        <li><i class="ph-fill ph-arrow-up-right"></i> <span>Liderazgos con coherencia y
-                                responsabilidad.</span></li>
-                    </ul>
-                </div>
-                <div class="reveal" style="text-align:left;">
-                    <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1.5rem;">Criterios de
-                        Colaboración</h3>
-                    <p style="font-size:0.95rem; color:var(--texto-light); margin-bottom:1.5rem;">Priorizamos alianzas
-                        con organizaciones que compartan valores de ética, responsabilidad social y busquen un impacto
-                        real.</p>
-                    <div
-                        style="padding:1rem; background:var(--fondo-claro); border-radius:10px; font-size:0.9rem; font-style:italic;">
-                        "El impacto sostenible comienza por el desarrollo interno de las personas."
+                style="margin-top: 5rem; background:white; border-radius:24px; box-shadow:0 10px 40px rgba(0,0,0,0.05); display:grid; grid-template-columns: 1fr 1fr 1fr; align-items: stretch; overflow: hidden; gap: 0;">
+                <div class="reveal" style="text-align:left; padding: 4rem 3rem; display: flex; flex-direction: column;">
+                    <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1.5rem; height: 3rem; display: flex; align-items: center;">Impacto Compartido</h3>
+                    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <ul class="audience-list">
+                            <li><i class="ph-fill ph-arrow-up-right"></i> <span>Mayor claridad en la toma de decisiones.</span></li>
+                            <li><i class="ph-fill ph-arrow-up-right"></i> <span>Equipos más alineados y comprometidos.</span></li>
+                            <li><i class="ph-fill ph-arrow-up-right"></i> <span>Cultura institucional fortalecida.</span></li>
+                            <li><i class="ph-fill ph-arrow-up-right"></i> <span>Liderazgos con coherencia y responsabilidad.</span></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-
-            <div class="reveal" style="text-align:center; margin-top:5rem;">
-                <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1rem;">¿Cómo iniciar una
-                    alianza?</h3>
-                <p style="max-width:600px; margin:0 auto 2rem; color:var(--texto-light);">El primer paso es una reunión
-                    institucional para comprender objetivos y analizar líneas de trabajo conjunto.</p>
-                <a href="https://wa.me/5491100000000" class="btn-rosa">Coordinar reunión institucional</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-white" id="somos">
-        <div class="section-inner">
-            <div class="triada-intro reveal" style="margin-bottom: 3rem;">
-                <span class="section-tag">El Equipo</span>
-                <h2 class="section-title">Un equipo comprometido con la consciencia aplicada</h2>
-                <p class="section-subtitle" style="margin: 0 auto;">Fundación Consciencia Humana está integrada por
-                    personas que combinan experiencia en liderazgo, acompañamiento humano y diseño de procesos de
-                    transformación. Nos une una misma intención: construir espacios donde la profundidad y la acción se
-                    encuentren.</p>
-            </div>
-
-            <div class="validation-grid stagger" style="justify-content: center;">
-                <div class="validation-card reveal" style="--i:0; max-width: 500px; margin: 0 auto;">
-                    <div class="validation-logo gcba">FCH</div>
-                    <div class="validation-info">
-                        <h4>Acompañamiento Profesional</h4>
-                        <p>Facilitadores con más de 15 años de trayectoria en desarrollo humano.</p>
+                <div class="reveal" style="text-align:left; padding: 4rem 3rem; display: flex; flex-direction: column;">
+                    <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1.5rem; height: 3rem; display: flex; align-items: center;">Criterios de Colaboración</h3>
+                    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <p style="font-size:0.95rem; color:var(--texto-light); margin-bottom:1.5rem;">Priorizamos alianzas con organizaciones que compartan valores de ética, responsabilidad social y busquen un impacto real.</p>
+                        <div style="padding:1.5rem; background:#F8F6FF; border-radius:12px; font-size:0.9rem; font-style:italic; color:var(--texto);">
+                            "El impacto sostenible comienza por el desarrollo interno de las personas."
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal" style="text-align:left; background: #F8F6FF; padding: 4rem 3.5rem; display: flex; flex-direction: column;">
+                    <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1.5rem; height: 3rem; display: flex; align-items: center;">¿Cómo iniciar?</h3>
+                    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <p style="font-size:0.95rem; color:var(--texto-light); margin-bottom:2.5rem; line-height: 1.6;">El primer paso es una reunión institucional para comprender objetivos y analizar líneas de trabajo conjunto.</p>
+                        <a href="mailto:contacto@conscienciahumana.com" class="btn-rosa shadow-hover" style="padding: 1.2rem 2.2rem; font-size: 1rem; border-radius: 50px; align-self: flex-start;">Coordinar reunión</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
 
 
     <!-- ═══════════════════════════════════════
          DIAGNOSTIC WIDGET HTML
          ═══════════════════════════════════════ -->
-    <button class="widget-fab" onclick="toggleWidget()" aria-label="Diagnóstico">
-        <i class="ph-bold ph-lightning"></i>
-    </button>
-
-    <div class="widget-panel" id="diagnostic-panel">
-        <button onclick="toggleWidget()"
-            style="position:absolute; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">&times;</button>
-        <h2 style="font-family:'Poppins'; color:var(--violeta-deep);">Diagnóstico FCH</h2>
-        <p style="font-size:0.9rem; color:var(--texto-light); margin-bottom:2rem;">Descubrí tu nivel actual de conexión
-            y madurez digital.</p>
-
-        <div id="diagnostic-content">
-            <div id="question-container">
-                <!-- Questions will be injected here by JS -->
-            </div>
-
-            <div class="widget-controls" style="display:flex; gap:1rem; margin-top:2rem;">
-                <button id="prev-btn" onclick="prevQuestion()" class="btn-outline-white"
-                    style="flex:1; color:var(--texto); border-color:#ddd; display:none;">Anterior</button>
-                <button id="next-btn" onclick="nextQuestion()" class="btn-hero"
-                    style="flex:2; border:none;">Siguiente</button>
-            </div>
-
-            <div id="progress-bar-container"
-                style="width:100%; height:6px; background:#eee; border-radius:10px; margin-top:1.5rem; overflow:hidden;">
-                <div id="progress-bar" style="width:0%; height:100%; background:var(--rosa); transition:width 0.3s;">
-                </div>
-            </div>
-            <p id="progress-text"
-                style="font-size:0.75rem; color:var(--texto-muted); text-align:center; margin-top:0.5rem;">Pregunta 1 de
-                15</p>
-        </div>
-
-        <div id="diagnostic-result"
-            style="display:none; margin-top:2rem; padding:2rem; background:var(--fondo-claro); border-radius:12px; text-align:center; animation:fadeInUp 0.6s ease-out;">
-            <div style="font-size:3rem; margin-bottom:1rem;" id="result-icon">✨</div>
-            <h3 id="result-title" style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1rem;">
-                Resultado: Nivel Explorador</h3>
-            <p id="result-desc"
-                style="font-size:0.95rem; line-height:1.6; color:var(--texto-light); margin-bottom:2rem;">Estás listo
-                para profundizar en tu propósito. Te recomendamos nuestra charla de "Despertar en la Matrix".</p>
-            <button onclick="resetDiagnostic()" class="btn-outline-white"
-                style="color:var(--violeta-mid); border-color:var(--violeta-mid); width:100%;">Reiniciar Test</button>
-        </div>
-    </div>
     </div>
 
 
@@ -2332,7 +2276,7 @@
         <div class="section-inner">
             <div class="triada-intro reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <span class="section-tag">Colaboración</span>
-                <h2 class="section-title">Sumate a Fundación Consciencia Humana</h2>
+                <h2 class="section-title">Sumate a la Fundación Consciencia Humana</h2>
                 <p class="section-subtitle" style="margin: 0 auto 2.5rem;">
                     Buscamos personas comprometidas con construir espacios de transformación reales: con criterio,
                     sensibilidad y capacidad de llevar las ideas a la acción.
@@ -2358,14 +2302,11 @@
         <div class="section-inner">
             <div class="footer-cta reveal">
                 <h2>Si sentís que es momento de evolucionar</h2>
-                <p>La pregunta no es si podés cambiar. La pregunta es cuándo decidís hacerlo.</p>
+                <p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 2rem;">
+                    La pregunta no es si podés cambiar. <span style="font-weight: 700; font-size: 1.25em; display: inline-block; margin-left: 0.5rem; color: #fff;">La pregunta es cuándo decidís hacerlo.</span>
+                </p>
                 <div class="footer-buttons">
-                    <a href="https://wa.me/5491100000000" class="btn-rosa" target="_blank" rel="noopener">Quiero
-                        comenzar mi proceso</a>
-                    <a href="mailto:contacto@conscienciahumana.com" class="btn-outline-white">
-                        <i class="ph-bold ph-envelope"></i>
-                        Email institucional
-                    </a>
+                    <a href="mailto:contacto@conscienciahumana.com" class="btn-rosa">Quiero comenzar mi proceso</a>
                 </div>
             </div>
 
@@ -2397,8 +2338,9 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
+        window.revealObserver = observer; // Export global observer
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // ─── Counter animation for metrics ───
@@ -2589,24 +2531,40 @@
             if (!grid) return;
             grid.innerHTML = '';
 
+            const categoryColors = {
+                'Bienestar': 'var(--rosa)',
+                'Sentido': 'var(--amarillo-hover)',
+                'Neurociencia': 'var(--violeta-soft)',
+                'Liderazgo': 'var(--verde)'
+            };
+
             const filtered = filter === 'Todos' ? bitacoraArticles : bitacoraArticles.filter(a => a.category === filter);
 
-            filtered.forEach(a => {
+            filtered.forEach((a, index) => {
+                const color = categoryColors[a.category] || 'var(--violeta-deep)';
+                const readingTime = Math.ceil(a.content.replace(/<[^>]*>?/gm, '').length / 1000) + 1; // More accurate calculation
+
                 grid.innerHTML += `
-                    <div class="bitacora-card reveal" onclick="openBitacoraModal('${a.id}')">
+                    <div class="bitacora-card reveal shadow-hover" style="--i:${index % 3};" onclick="openBitacoraModal('${a.id}')">
                         <div>
-                            <span class="section-tag" style="color:var(--rosa);">${a.category}</span>
-                            <h3>${a.title}</h3>
+                            <span class="section-tag" style="color:${color}; opacity: 0.9;">${a.category}</span>
+                            <h3 style="margin-top: 1rem;">${a.title}</h3>
                             <p>${a.excerpt}</p>
                         </div>
                         <div class="card-meta">
-                            <span>${Math.ceil(a.content.length / 500)} min de lectura</span>
+                            <span>${readingTime} min de lectura</span>
                             <div class="read-action">Leer reflexión <i class="ph-bold ph-arrow-right"></i></div>
                         </div>
                     </div>
                 `;
             });
-            if (window.checkReveal) checkReveal();
+
+            // Re-trigger reveal animation for newly created cards
+            if (window.revealObserver) {
+                document.querySelectorAll('#bitacora-grid .reveal:not(.visible)').forEach(el => {
+                    window.revealObserver.observe(el);
+                });
+            }
         }
 
         function filterBitacora(cat, btn) {
@@ -2641,8 +2599,8 @@
             }, 500);
         }
 
-        // Llamada inicial (comentada para favorecer contenido estático)
-        // window.addEventListener('load', () => renderBitacora());
+        // Llamada inicial para cargar los artículos
+        window.addEventListener('load', () => renderBitacora());
 
         // ─── Mobile menu ───
         function openMobileMenu() {
@@ -2654,10 +2612,21 @@
             document.body.style.overflow = 'auto';
         }
 
-        // ─── Smooth scroll for anchor links ───
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // ─── Smooth scroll and Mailto Handler ───
+        document.querySelectorAll('a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+
+                // Explicit handling for mailto to bypass localhost/browser blocks
+                if (href && href.startsWith('mailto:')) {
+                    e.stopPropagation(); // Stop propagation just in case
+                    window.location.href = href; // Programmatically trigger mailto
+                    return;
+                }
+
+                if (!href || href === '#' || !href.startsWith('#')) return;
+
+                const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -1,0 +1,25 @@
+{
+  "name": "fundacion-ch-web",
+  "version": "1.0.0",
+  "description": "Landing page institucional de la **Fundación Consciencia Humana (FCH)**.",
+  "main": "replace_teaser.js",
+  "scripts": {
+    "dev": "browser-sync start --server --files \"*.html, img/*, *.js\" --no-notify --port 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joerey101/conscienciahumana.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/joerey101/conscienciahumana/issues"
+  },
+  "homepage": "https://github.com/joerey101/conscienciahumana#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}
