@@ -36,8 +36,8 @@
             --verde-soft: #55EFC4;
             /* Text */
             --texto: #2D2A4A;
-            --texto-light: rgba(45, 42, 74, 0.65);
-            --texto-muted: rgba(45, 42, 74, 0.45);
+            --texto-light: rgba(45, 42, 74, 0.8); /* Darkened for better contrast */
+            --texto-muted: rgba(45, 42, 74, 0.55); /* Darkened for better contrast */
         }
 
         * {
@@ -1072,6 +1072,25 @@
             }
         }
 
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: stretch;
+            overflow: hidden;
+            gap: 0;
+        }
+
+        .metrics-grid.icons-row {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem; /* Desktop gap */
+        }
+
         /* ═══════════════════════════════
            MOBILE MENU
            ═══════════════════════════════ */
@@ -1142,7 +1161,13 @@
             }
 
             .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
             .validation-grid {
@@ -1150,7 +1175,6 @@
                 max-width: 500px;
                 margin: 0 auto 3rem;
             }
-
         }
 
         @media (max-width: 768px) {
@@ -1171,17 +1195,57 @@
             }
 
             .section {
-                padding: 4rem 1.5rem;
+                padding: 3.5rem 1.2rem; /* Reduced for better mobile flow */
             }
 
             .triada-grid {
                 grid-template-columns: 1fr;
                 max-width: 100%;
+                gap: 1.25rem;
+            }
+
+            .triada-card {
+                padding: 1.75rem 1.25rem; /* More compact for mobile */
+            }
+
+            .triada-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .triada-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .bitacora-card {
+                padding: 2rem 1.5rem;
+                border-radius: 1.5rem;
+            }
+
+            .bitacora-card h3 {
+                font-size: 1.75rem;
+            }
+
+            .bitacora-grid {
+                gap: 1.5rem;
+                margin-top: 2rem;
             }
 
             .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
+                grid-template-columns: 1fr !important;
+                gap: 0;
+            }
+            
+            /* Specific fix for Impacto Compartido section on mobile */
+            .metrics-grid > div {
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+                padding: 3rem 2rem !important;
+            }
+            
+            .metrics-grid > div:last-child {
+                border-bottom: none;
             }
 
             .footer-buttons,
@@ -1206,29 +1270,100 @@
                 gap: 1.5rem;
             }
 
+            .section-title {
+                font-size: 1.75rem;
+                line-height: 1.2;
+                letter-spacing: -0.01em;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .mission-grid {
+                gap: 2rem;
+            }
+            
+            .hero-content {
+                padding: 2rem 1rem;
+            }
+
+            /* Full width fix for Transformation Section (Mobile/Tablet) */
+            #transformacion {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            #transformacion .section-inner {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                max-width: 100% !important;
+            }
+            #transformacion .platform-img {
+                margin: 0 !important;
+                border-radius: 0 !important;
+                max-height: none !important;
+            }
+            #transformacion .platform-img img {
+                border-radius: 0 !important;
+                width: 100% !important;
+                box-shadow: none !important;
+            }
+            #transformacion .reveal:last-child {
+                padding: 0 1.5rem !important;
+            }
+            #transformacion h2.section-title {
+                padding: 0 1.5rem !important;
+            }
+            #transformacion .platform-grid {
+                gap: 2rem !important;
+            }
+
+            /* Icons row (Bienestar/Vinculos) side-by-side on mobile */
+            .metrics-grid.icons-row {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 0.5rem !important;
+                margin-top: 2.5rem !important;
+            }
+            .icons-row .triada-icon {
+                width: 42px !important;
+                height: 42px !important;
+                font-size: 1.1rem !important;
+                margin: 0 auto 0.8rem !important;
+            }
+            .icons-row .metric-label {
+                font-size: 0.65rem !important;
+                line-height: 1.3 !important;
+                font-weight: 500 !important;
+            }
+            .icons-row .metric-item {
+                padding: 0 !important;
+                border: none !important;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: clamp(1.8rem, 8vw, 2.22rem);
+                font-size: 2.1rem;
+                line-height: 1.1;
             }
 
             .hero p {
                 font-size: 0.95rem;
-                padding: 0 0.5rem;
-            }
-
-            .metrics-grid {
-                grid-template-columns: 1fr;
+                padding: 0 0.2rem;
             }
 
             .section-title {
-                font-size: 1.75rem;
+                font-size: 1.7rem;
             }
 
             .navbar-logo span {
                 font-size: 1rem;
             }
+            
+            .bitacora-article-title {
+                font-size: 2.8rem;
+            }
+
         }
 
         .footer-buttons,
@@ -1853,8 +1988,7 @@
                 <h2 class="section-title" style="margin-bottom: 4rem;">Contribuir a una sociedad <br> donde las personas
                     se sientan <br> orgullosas de pertenecer</h2>
 
-                <div class="mission-grid"
-                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; padding: 0 1rem;">
+                <div class="mission-grid" style="text-align: left; padding: 0 1rem;">
                     <div class="mission-column reveal" style="--i:0;">
                         <div style="width: 40px; height: 3px; background: var(--rosa); margin-bottom: 2rem;"></div>
                         <h3
@@ -1980,13 +2114,15 @@
 
     <section class="section section-white" id="transformacion">
         <div class="section-inner">
-            <div class="platform-grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
+            <div class="reveal" style="margin-bottom: 2.5rem;">
+                <h2 class="section-title">Cómo generamos transformación real</h2>
+            </div>
+            <div class="platform-grid" style="align-items: start;">
                 <div class="platform-img reveal">
                     <img src="img/transformacion-img.png" alt="Transformación"
-                        style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 100%;">
                 </div>
                 <div class="reveal">
-                    <h2 class="section-title">Cómo generamos transformación real</h2>
                     <p style="font-size: 1.1rem; color: var(--texto-light); margin-bottom: 2rem;">Las personas ya tienen
                         recursos internos. Solo necesitan activarlos con claridad y método.</p>
                     <p style="margin-bottom: 1.5rem; color: var(--texto-light);">Creamos espacios donde:</p>
@@ -2019,7 +2155,7 @@
                 <p style="margin-top: 1.5rem; color: var(--texto-light);">No se trata de negar el caos externo. Se trata
                     de fortalecer tu equilibrio interior.</p>
             </div>
-            <div class="metrics-grid stagger" style="margin-top: 3rem;">
+            <div class="metrics-grid icons-row stagger" style="margin-top: 3rem;">
                 <div class="metric-item reveal" style="--i:0">
                     <div class="triada-icon rosa-bg" style="margin: 0 auto 1rem;"><i class="ph-fill ph-heart"></i></div>
                     <div class="metric-label" style="color: var(--texto);">Tu bienestar</div>
@@ -2230,7 +2366,7 @@
             </div>
 
             <div class="metrics-grid stagger"
-                style="margin-top: 5rem; background:white; border-radius:24px; box-shadow:0 10px 40px rgba(0,0,0,0.05); display:grid; grid-template-columns: 1fr 1fr 1fr; align-items: stretch; overflow: hidden; gap: 0;">
+                style="margin-top: 5rem; background:white; border-radius:24px; box-shadow:0 10px 40px rgba(0,0,0,0.05);">
                 <div class="reveal" style="text-align:left; padding: 4rem 3rem; display: flex; flex-direction: column;">
                     <h3 style="font-family:'Poppins'; color:var(--violeta-deep); margin-bottom:1.5rem; height: 3rem; display: flex; align-items: center;">Impacto Compartido</h3>
                     <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start;">
@@ -2284,9 +2420,9 @@
                     queremos conocerte.
                 </p>
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 0.8rem;">
-                    <a href="https://wa.me/5491100000000" class="btn-rosa" target="_blank" rel="noopener"
+                    <a href="mailto:contacto@conscienciahumana.com" class="btn-rosa"
                         style="padding: 1.2rem 3rem; font-size: 1.1rem;">Sumate acá</a>
-                    <span style="font-size: 0.8rem; color: var(--texto-muted);">Te toma 2 minutos. Nos llega directo al
+                    <span style="font-size: 0.8rem; color: var(--texto-muted);">Te responderemos a la brevedad. Nos llega directo al
                         equipo.</span>
                 </div>
             </div>
