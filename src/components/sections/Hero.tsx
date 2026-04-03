@@ -1,11 +1,11 @@
-import { siteConfig } from '../../data/site'
+import { Link } from 'react-router-dom'
 
 export function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero-bg" />
       <div className="hero-overlay" />
-      <div className="hero-content reveal">
+      <div className="hero-content">
         <h1>Volver a elegir cómo<br />querés vivir</h1>
         <p>
           Hay momentos en los que algo interno te dice que ya no alcanza con <br className="desktop-only" /> 
@@ -16,9 +16,9 @@ export function Hero() {
           Consciencia Humana le habla a quienes están listos para evolucionar.
         </p>
         <div className="button-group" style={{ marginTop: '2.5rem', justifyContent: 'center' }}>
-          <a href={siteConfig.contactEmail} className="btn-hero shadow-hover">
+          <Link to="/agenda" className="btn-hero shadow-hover">
             Quiero comenzar mi proceso
-          </a>
+          </Link>
         </div>
       </div>
     </section>

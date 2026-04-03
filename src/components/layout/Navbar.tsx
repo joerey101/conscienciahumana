@@ -1,4 +1,5 @@
 import { List, X } from '@phosphor-icons/react'
+import { Link, useLocation } from 'react-router-dom'
 import { useNavbarScroll } from '../../hooks/useNavbarScroll'
 import { useMobileMenu } from '../../hooks/useMobileMenu'
 import { siteConfig } from '../../data/site'
@@ -7,16 +8,20 @@ export function Navbar() {
   const scrolled = useNavbarScroll()
   const { isOpen, open, close } = useMobileMenu()
 
-  const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault()
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  const location = useLocation()
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   return (
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="navbar">
         <div className="navbar-inner">
-          <a href="#" className="navbar-logo" onClick={scrollToTop} aria-label="Fundación Consciencia Humana - Inicio">
+          <Link to="/" className="navbar-logo" onClick={handleLogoClick} aria-label="Fundación Consciencia Humana - Inicio">
             <div className="fch-logo-container">
               <svg viewBox="0 0 100 100" className="fch-logo-animated">
                 <defs>
@@ -29,11 +34,15 @@ export function Navbar() {
               </svg>
             </div>
             <span>Fundación Consciencia Humana</span>
-          </a>
+          </Link>
           <ul className="navbar-links">
             {siteConfig.nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
+                {item.href.startsWith('#') ? (
+                  <a href={`/${item.href}`}>{item.label}</a>
+                ) : (
+                  <Link to={item.href}>{item.label}</Link>
+                )}
               </li>
             ))}
           </ul>
@@ -52,7 +61,11 @@ export function Navbar() {
           <X size={22} weight="bold" />
         </button>
         {siteConfig.nav.map((item) => (
-          <a key={item.href} href={item.href} onClick={close}>{item.label}</a>
+          item.href.startsWith('#') ? (
+            <a key={item.href} href={`/${item.href}`} onClick={close}>{item.label}</a>
+          ) : (
+            <Link key={item.href} to={item.href} onClick={close}>{item.label}</Link>
+          )
         ))}
       </div>
     </>

@@ -1,6 +1,6 @@
 export function Mision() {
   return (
-    <section className="section section-light" id="proposito">
+    <section className="section section-light" id="nuestra-mision">
       <div className="section-inner">
         <div className="triada-intro reveal" style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
           <span className="section-tag">Nuestra Misión</span>

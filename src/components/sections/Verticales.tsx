@@ -1,4 +1,5 @@
 import { Buildings, Briefcase, Sparkle } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 import { verticalesData } from '../../data/site'
 
 const iconComponents: Record<string, React.ReactNode> = {
@@ -9,7 +10,7 @@ const iconComponents: Record<string, React.ReactNode> = {
 
 export function Verticales() {
   return (
-    <section className="section section-white" id="experiencias">
+    <section className="section section-white" id="verticales">
       <div className="section-inner">
         <div className="triada-intro reveal">
           <span className="section-tag">Nuestras verticales de acción</span>
@@ -24,7 +25,7 @@ export function Verticales() {
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <a href="#cta-final" className="btn-rosa">Quiero saber más</a>
+          <Link to="/programas" className="btn-rosa">Quiero saber más</Link>
         </div>
       </div>
     </section>

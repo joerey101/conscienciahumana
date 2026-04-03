@@ -1,4 +1,4 @@
-import { siteConfig } from '../../data/site'
+import { Link } from 'react-router-dom'
 
 export function DondeActuamos() {
   return (
@@ -14,9 +14,9 @@ export function DondeActuamos() {
             No imponemos transformación. La facilitamos cuando hay apertura y compromiso.
           </p>
           <div style={{ marginTop: '3rem' }}>
-            <a href={siteConfig.contactEmail} className="btn-rosa shadow-hover" style={{ padding: '1.2rem 2.5rem', fontSize: '1.1rem', borderRadius: 50 }}>
+            <Link to="/organizaciones" className="btn-rosa shadow-hover" style={{ display: 'inline-block', padding: '1.2rem 2.5rem', fontSize: '1.1rem', borderRadius: 50 }}>
               Coordinar reunión institucional
-            </a>
+            </Link>
           </div>
         </div>
       </div>

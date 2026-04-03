@@ -1,5 +1,5 @@
 import { CheckCircle, ArrowUpRight } from '@phosphor-icons/react'
-import { siteConfig } from '../../data/site'
+import { Link } from 'react-router-dom'
 
 export function Alianzas() {
   return (
@@ -12,9 +12,9 @@ export function Alianzas() {
             Fundación Consciencia Humana trabaja junto a organizaciones, empresas e instituciones que buscan promover liderazgo consciente, cultura responsable y transformación sostenible.
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={siteConfig.contactEmail} className="btn-rosa shadow-hover" style={{ padding: '1rem 2rem', borderRadius: 50 }}>
+            <Link to="/agenda" className="btn-rosa shadow-hover" style={{ display: 'inline-block', padding: '1rem 2rem', borderRadius: 50 }}>
               Solicitar reunión institucional
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -81,9 +81,9 @@ export function Alianzas() {
               <p style={{ fontSize: '0.95rem', color: 'var(--texto-light)', marginBottom: '2.5rem', lineHeight: 1.6 }}>
                 El primer paso es una reunión institucional para comprender objetivos y analizar líneas de trabajo conjunto.
               </p>
-              <a href={siteConfig.contactEmail} className="btn-rosa shadow-hover" style={{ padding: '1.2rem 2.2rem', fontSize: '1rem', borderRadius: 50, alignSelf: 'flex-start' }}>
+              <Link to="/agenda" className="btn-rosa shadow-hover" style={{ display: 'inline-block', padding: '1.2rem 2.2rem', fontSize: '1rem', borderRadius: 50, alignSelf: 'flex-start' }}>
                 Coordinar reunión
-              </a>
+              </Link>
             </div>
           </div>
         </div>

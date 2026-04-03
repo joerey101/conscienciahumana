@@ -1,4 +1,4 @@
-import { siteConfig } from '../../data/site'
+import { Link } from 'react-router-dom'
 
 export function Sumate() {
   return (
@@ -11,9 +11,9 @@ export function Sumate() {
             Buscamos personas comprometidas con construir espacios de transformación reales: con criterio, sensibilidad y capacidad de llevar las ideas a la acción. Si querés colaborar, proponer, aportar tiempo profesional o acompañar proyectos desde tu lugar, queremos conocerte.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem' }}>
-            <a href={siteConfig.contactEmail} className="btn-rosa" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem' }}>
+            <Link to="/agenda" className="btn-rosa" style={{ display: 'inline-block', padding: '1.2rem 3rem', fontSize: '1.1rem' }}>
               Sumate acá
-            </a>
+            </Link>
             <span style={{ fontSize: '0.8rem', color: 'var(--texto-muted)' }}>
               Te responderemos a la brevedad. Nos llega directo al equipo.
             </span>

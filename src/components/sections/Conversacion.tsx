@@ -9,7 +9,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export function Conversacion() {
   return (
-    <section className="section section-light" id="conversacion">
+    <section className="section section-light" id="nuestra-mirada">
       <div className="section-inner">
         <div className="triada-intro reveal">
           <span className="section-tag">Nuestra Mirada</span>
