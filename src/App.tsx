@@ -13,7 +13,7 @@ import { Verticales } from './components/sections/Verticales'
 import { Impacto } from './components/sections/Impacto'
 import { Alianzas } from './components/sections/Alianzas'
 import { Sumate } from './components/sections/Sumate'
-import { VisualProgress } from './components/modules/VisualProgress'
+
 import { useRevealAnimation } from './hooks/useRevealAnimation'
 
 export default function App() {
@@ -34,7 +34,7 @@ export default function App() {
         <Impacto />
         <Alianzas />
         <Sumate />
-        {import.meta.env.DEV && <VisualProgress />}
+
       </main>
       <Footer />
     </>
