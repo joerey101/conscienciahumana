@@ -34,7 +34,7 @@ export default function App() {
         <Impacto />
         <Alianzas />
         <Sumate />
-        <VisualProgress />
+        {import.meta.env.DEV && <VisualProgress />}
       </main>
       <Footer />
     </>
