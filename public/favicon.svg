@@ -1,16 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
-    <path id="petal" d="M50 90 C30 90 15 65 15 40 C15 15 50 5 50 5 C50 5 85 15 85 40 C85 65 70 90 50 90 Z" />
+    <path id="fch-petal" d="M50 90 C30 90 15 65 15 40 C15 15 50 5 50 5 C50 5 85 15 85 40 C85 65 70 90 50 90 Z" />
   </defs>
-  <style>
-    .fch-petal { transform-origin: 50% 90%; fill-opacity: 0.8; mix-blend-mode: multiply; }
-    .p-cyan { transform: rotate(0deg); }
-    .p-purple { transform: rotate(-15deg); }
-    .p-pink { transform: rotate(-30deg); }
-    .p-yellow { transform: rotate(20deg); }
-  </style>
-  <use href="#petal" class="fch-petal p-cyan" fill="#5DC1FF" />
-  <use href="#petal" class="fch-petal p-purple" fill="#AC5CFF" />
-  <use href="#petal" class="fch-petal p-pink" fill="#FF76E2" />
-  <use href="#petal" class="fch-petal p-yellow" fill="#FFF647" />
+  <g style="mix-blend-mode: multiply; opacity: 0.85;">
+    <use href="#fch-petal" fill="#5DC1FF" transform="rotate(0, 50, 90)" />
+    <use href="#fch-petal" fill="#AC5CFF" transform="rotate(-15, 50, 90)" />
+    <use href="#fch-petal" fill="#FF76E2" transform="rotate(-30, 50, 90)" />
+    <use href="#fch-petal" fill="#FFF647" transform="rotate(20, 50, 90)" />
+  </g>
 </svg>
