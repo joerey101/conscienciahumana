@@ -15,7 +15,7 @@ export function ElSalto() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--rosa)' }}>Programa Personal</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
@@ -25,7 +25,7 @@ export function ElSalto() {
             Un proceso de evolución personal organizado en tres etapas: Reconocimiento, Activación y Sustentabilidad.
           </p>
           <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-rosa shadow-hover" style={{ display: 'inline-block', padding: '1.2rem 2.5rem', fontSize: '1.1rem', borderRadius: 50 }}>
+            <Link to="/agenda" className="btn-rosa shadow-hover">
               Quiero conocer este programa
             </Link>
           </div>
@@ -46,7 +46,7 @@ export function ElSalto() {
                   "Quienes necesitan claridad interna.",
                   "Aquellos que sienten que sus resultados actuales no expresan quiénes son ni cómo quieren vivir."
                 ].map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1rem', background: '#F8F9FA', borderRadius: '12px' }}>
+                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', background: '#F8F9FA' }}>
                     <CheckCircle size={24} weight="fill" color="var(--violeta-deep)" style={{ flexShrink: 0, marginTop: '2px' }} />
                     <span style={{ fontSize: '1.1rem', color: 'var(--texto)' }}>{item}</span>
                   </li>
@@ -65,7 +65,7 @@ export function ElSalto() {
                   "Disciplina consciente.",
                   "Alineamiento y sostén."
                 ].map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1rem', background: '#FDF9F3', borderRadius: '12px' }}>
+                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', background: '#FDF9F3' }}>
                     <CircleNotch size={24} weight="bold" color="var(--rosa)" style={{ flexShrink: 0, marginTop: '2px' }} />
                     <span style={{ fontSize: '1.1rem', color: 'var(--texto)' }}>{item}</span>
                   </li>
@@ -84,21 +84,21 @@ export function ElSalto() {
           <h2 className="section-title reveal">Estructura del proceso</h2>
           
           <div className="reveal" style={{ marginTop: '3rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', alignItems: 'center' }}>
-            <div style={{ background: 'white', padding: '2rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', width: '250px' }}>
+            <div className="triada-card" style={{ background: 'white', width: '280px' }}>
               <h3 style={{ fontSize: '1.5rem', color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '0.5rem' }}>1. Reconocer</h3>
               <p style={{ color: 'var(--texto-light)' }}>Observación y diagnóstico honesto del presente.</p>
             </div>
             
-            <div style={{ color: 'var(--rosa)', fontSize: '2rem' }}>→</div>
+            <div className="desktop-only" style={{ color: 'var(--rosa)', fontSize: '2rem' }}>→</div>
             
-            <div style={{ background: 'white', padding: '2rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', width: '250px' }}>
+            <div className="triada-card" style={{ background: 'white', width: '280px' }}>
               <h3 style={{ fontSize: '1.5rem', color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '0.5rem' }}>2. Activar</h3>
               <p style={{ color: 'var(--texto-light)' }}>Implementación de herramientas y nuevas respuestas.</p>
             </div>
 
-            <div style={{ color: 'var(--rosa)', fontSize: '2rem' }}>→</div>
+            <div className="desktop-only" style={{ color: 'var(--rosa)', fontSize: '2rem' }}>→</div>
 
-            <div style={{ background: 'white', padding: '2rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', width: '250px' }}>
+            <div className="triada-card" style={{ background: 'white', width: '280px' }}>
               <h3 style={{ fontSize: '1.5rem', color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '0.5rem' }}>3. Sostener</h3>
               <p style={{ color: 'var(--texto-light)' }}>Construcción de hábitos y seguimiento de coherencia.</p>
             </div>

@@ -15,7 +15,7 @@ export function AutoevaluacionActivacion() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--amarillo)' }}>Programa Base</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
@@ -25,7 +25,7 @@ export function AutoevaluacionActivacion() {
             Una puerta de entrada a la metodología Consciencia Humana para quienes necesitan claridad, cambio, hábitos, foco o acompañamiento.
           </p>
           <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-hero" style={{ display: 'inline-block', background: 'var(--amarillo)', color: 'white', border: 'none', padding: '1.2rem 2.5rem', fontSize: '1.1rem', borderRadius: 50 }}>
+            <Link to="/agenda" className="btn-hero" style={{ background: 'var(--amarillo)' }}>
               Quiero empezar por acá
             </Link>
           </div>
@@ -39,7 +39,7 @@ export function AutoevaluacionActivacion() {
             
             <div className="reveal">
               <h2 className="section-title" style={{ fontSize: '2rem', textAlign: 'left', marginBottom: '2rem' }}>¿Para quién es?</h2>
-              <p style={{ fontSize: '1.1rem', color: 'var(--texto-light)', lineHeight: 1.8, background: '#F8F9FA', padding: '2rem', borderRadius: '12px', borderLeft: '4px solid var(--amarillo)' }}>
+              <p className="triada-card" style={{ fontSize: '1.1rem', color: 'var(--texto-light)', lineHeight: 1.8, background: '#F8F9FA', borderLeft: '4px solid var(--amarillo)' }}>
                 Personas en momento de revisión personal que necesitan estructura para observar lo que hoy les pasa, nombrar lo que ya no funciona, y empezar a activar decisiones, hábitos y dirección.
               </p>
             </div>
@@ -55,7 +55,7 @@ export function AutoevaluacionActivacion() {
                   "Seguimiento",
                   "Coherencia"
                 ].map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', background: '#FDF9F3', borderRadius: '12px' }}>
+                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', background: '#FDF9F3' }}>
                     <CheckCircle size={20} weight="fill" color="var(--amarillo)" style={{ flexShrink: 0 }} />
                     <span style={{ fontSize: '1.05rem', color: 'var(--texto)' }}>{item}</span>
                   </li>
@@ -85,7 +85,7 @@ export function AutoevaluacionActivacion() {
             "No se puede ajustar una dirección si no se revisa primero el punto de partida."
           </h2>
           <div className="reveal" style={{ animationDelay: '0.2s', marginTop: '2rem' }}>
-            <Link to="/agenda" className="btn-hero" style={{ display: 'inline-block', background: 'var(--amarillo)', color: 'white', border: 'none' }}>
+            <Link to="/agenda" className="btn-hero" style={{ background: 'var(--amarillo)', color: 'white', border: 'none' }}>
               Quiero empezar por acá
             </Link>
           </div>

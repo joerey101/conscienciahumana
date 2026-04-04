@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { PageSEO } from '../components/seo/PageSEO';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
+import { Eye, Zap, Anchor } from 'lucide-react';
+import { VisualProgress } from '../components/premium/VisualProgress';
 
 export function Metodo() {
   useRevealAnimation();
@@ -14,7 +16,7 @@ export function Metodo() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
             Método de autoevaluación, activación y sostenimiento
@@ -34,64 +36,49 @@ export function Metodo() {
         </div>
       </section>
 
-      {/* Tres Cards - El Método */}
+      {/* El Método - Visual Progress */}
       <section className="section section-light">
         <div className="section-inner">
-          <div className="triada-grid stagger">
-
-            {/* Card 1 */}
-            <div id="reconocer" className="triada-card reveal" style={{ '--i': 0, borderTop: '4px solid var(--rosa)' } as React.CSSProperties}>
-              <h3 style={{ fontSize: '1.8rem', color: 'var(--violeta-deep)', marginBottom: '0.5rem' }}>Reconocer</h3>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--rosa)' }}>Ver con más honestidad lo que hoy es</h4>
-              <p style={{ marginBottom: '1.5rem', flexGrow: 1 }}>
-                El primer paso no es cambiar rápido. Es reconocer. Reconocer la incomodidad, el desgaste, los hábitos que ya no sostienen, la distancia entre los resultados actuales y la vida que se quiere habitar.
-              </p>
-              <ul style={{ textAlign: 'left', marginTop: 'auto', borderTop: '1px solid #eee', paddingTop: '1rem', listStyle: 'disc', paddingLeft: '1.2rem', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
-                <li>Registro interno</li>
-                <li>Patrones repetidos</li>
-                <li>Desgaste emocional</li>
-                <li>Hábitos</li>
-                <li>Ruido y dispersión</li>
-                <li>Lectura de resultados</li>
-                <li>Zonas de desconexión</li>
-              </ul>
-            </div>
-
-            {/* Card 2 */}
-            <div className="triada-card reveal" style={{ '--i': 1, borderTop: '4px solid var(--amarillo)' } as React.CSSProperties}>
-              <h3 style={{ fontSize: '1.8rem', color: 'var(--violeta-deep)', marginBottom: '0.5rem' }}>Activar</h3>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--amarillo-dark, #D4A000)' }}>Responder distinto también es una práctica</h4>
-              <p style={{ marginBottom: '1.5rem', flexGrow: 1 }}>
-                Una vez que algo se ve, aparece la posibilidad de responder de otra manera. Activar es dejar de quedar atrapado solo en el diagnóstico. Es ordenar prioridades, nombrar una dirección, empezar a construir una respuesta más consciente.
-              </p>
-              <ul style={{ textAlign: 'left', marginTop: 'auto', borderTop: '1px solid #eee', paddingTop: '1rem', listStyle: 'disc', paddingLeft: '1.2rem', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
-                <li>Foco y dirección</li>
-                <li>Capacidad de decisión</li>
-                <li>Hábitos y disciplina consciente</li>
-                <li>Lenguaje y declaración</li>
-                <li>Acción alineada</li>
-                <li>Compromiso con el proceso</li>
-              </ul>
-            </div>
-
-            {/* Card 3 */}
-            <div className="triada-card reveal" style={{ '--i': 2, borderTop: '4px solid var(--azul)' } as React.CSSProperties}>
-              <h3 style={{ fontSize: '1.8rem', color: 'var(--violeta-deep)', marginBottom: '0.5rem' }}>Sostener</h3>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--azul)' }}>La transformación se vuelve real cuando encuentra forma de permanecer</h4>
-              <p style={{ marginBottom: '1.5rem', flexGrow: 1 }}>
-                No alcanza con tener un momento de claridad. Hace falta sostenerlo. Sostener es construir una nueva coherencia: una forma más consciente de estar, decidir, comunicar y actuar.
-              </p>
-              <ul style={{ textAlign: 'left', marginTop: 'auto', borderTop: '1px solid #eee', paddingTop: '1rem', listStyle: 'disc', paddingLeft: '1.2rem', gap: '0.5rem', display: 'flex', flexDirection: 'column' }}>
-                <li>Coherencia cotidiana</li>
-                <li>Seguimiento</li>
-                <li>Prácticas de recentrado</li>
-                <li>Comunicación</li>
-                <li>Revisión de desvíos</li>
-                <li>Capacidad de sostener sin rigidez</li>
-              </ul>
-            </div>
-
-          </div>
+          <VisualProgress 
+            procedures={[
+              {
+                title: "Reconocer",
+                icon: Eye,
+                steps: [
+                  "Registro interno de sensaciones",
+                  "Identificación de patrones repetidos",
+                  "Lectura de zonas de desgaste emocional",
+                  "Observación de hábitos automáticos",
+                  "Detección de ruido y dispersión",
+                  "Sinceramiento de resultados reales"
+                ]
+              },
+              {
+                title: "Activar",
+                icon: Zap,
+                steps: [
+                  "Definición de foco y dirección",
+                  "Recuperación de la capacidad de decidir",
+                  "Diseño de disciplina consciente",
+                  "Nueva narrativa y lenguaje",
+                  "Acción alineada al propósito",
+                  "Compromiso con el movimiento"
+                ]
+              },
+              {
+                title: "Sostener",
+                icon: Anchor,
+                steps: [
+                  "Construcción de coherencia cotidiana",
+                  "Dispositivos de seguimiento rítmico",
+                  "Prácticas de recentrado urgente",
+                  "Calidad en la comunicación",
+                  "Revisión y ajuste de desvíos",
+                  "Flexibilidad sin perder el centro"
+                ]
+              }
+            ]}
+          />
         </div>
       </section>
 

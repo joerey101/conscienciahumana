@@ -78,7 +78,7 @@ export function Agenda() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <span className="section-tag reveal mb-4" style={{ display: 'inline-block', color: 'var(--rosa)' }}>Contacto</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
@@ -103,12 +103,11 @@ export function Agenda() {
             {/* Card 1 */}
             <div 
               onClick={() => handleCardClick("persona")} 
-              className="reveal"
+              className="reveal triada-card"
               style={{ 
                 cursor: 'pointer', background: selectedType === 'persona' ? '#FDF9F3' : 'white', 
                 border: selectedType === 'persona' ? '2px solid var(--rosa)' : '2px solid #EEE', 
-                padding: '2.5rem 2rem', borderRadius: '16px', textAlign: 'center', transition: 'all 0.3s ease',
-                boxShadow: selectedType === 'persona' ? '0 10px 30px rgba(0,0,0,0.05)' : 'none'
+                textAlign: 'center'
               }}
             >
               <UserCircle size={48} weight={selectedType === 'persona' ? 'fill' : 'light'} color={selectedType === 'persona' ? 'var(--rosa)' : 'var(--texto-light)'} style={{ margin: '0 auto 1.5rem', transition: 'all 0.3s ease' }} />
@@ -119,12 +118,11 @@ export function Agenda() {
             {/* Card 2 */}
             <div 
               onClick={() => handleCardClick("organización")} 
-              className="reveal"
+              className="reveal triada-card"
               style={{ 
                 cursor: 'pointer', background: selectedType === 'organización' ? '#FDF9F3' : 'white', 
                 border: selectedType === 'organización' ? '2px solid var(--amarillo)' : '2px solid #EEE', 
-                padding: '2.5rem 2rem', borderRadius: '16px', textAlign: 'center', transition: 'all 0.3s ease',
-                boxShadow: selectedType === 'organización' ? '0 10px 30px rgba(0,0,0,0.05)' : 'none'
+                textAlign: 'center'
               }}
             >
               <Buildings size={48} weight={selectedType === 'organización' ? 'fill' : 'light'} color={selectedType === 'organización' ? 'var(--amarillo)' : 'var(--texto-light)'} style={{ margin: '0 auto 1.5rem', transition: 'all 0.3s ease' }} />
@@ -135,12 +133,11 @@ export function Agenda() {
             {/* Card 3 */}
             <div 
               onClick={() => handleCardClick("alianza")} 
-              className="reveal"
+              className="reveal triada-card"
               style={{ 
                 cursor: 'pointer', background: selectedType === 'alianza' ? '#FDF9F3' : 'white', 
                 border: selectedType === 'alianza' ? '2px solid var(--azul)' : '2px solid #EEE', 
-                padding: '2.5rem 2rem', borderRadius: '16px', textAlign: 'center', transition: 'all 0.3s ease',
-                boxShadow: selectedType === 'alianza' ? '0 10px 30px rgba(0,0,0,0.05)' : 'none'
+                textAlign: 'center'
               }}
             >
               <Handshake size={48} weight={selectedType === 'alianza' ? 'fill' : 'light'} color={selectedType === 'alianza' ? 'var(--azul)' : 'var(--texto-light)'} style={{ margin: '0 auto 1.5rem', transition: 'all 0.3s ease' }} />
@@ -156,7 +153,7 @@ export function Agenda() {
       <section id="formulario-contacto" className="section section-light" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <div className="section-inner" style={{ maxWidth: '800px', margin: '0 auto' }}>
           
-          <div className="reveal" style={{ background: 'white', padding: '4rem', borderRadius: '16px', boxShadow: '0 10px 40px rgba(0,0,0,0.05)' }}>
+          <div className="reveal triada-card" style={{ background: 'white' }}>
             
             {status === 'success' ? (
               <div style={{ textAlign: 'center', padding: '3rem 0' }}>

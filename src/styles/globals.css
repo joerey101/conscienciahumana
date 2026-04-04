@@ -44,8 +44,8 @@ img {
    TYPOGRAPHY
    ═══════════════════════════════════ */
 h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
-h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
+h1 { font-size: clamp(1.8rem, 5vw, 3.8rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.8rem); font-weight: 700; }
 h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.8rem; }
 p { margin-bottom: 1rem; }
 
@@ -111,6 +111,13 @@ p { margin-bottom: 1rem; }
 .section {
   padding: 6rem 2rem;
   position: relative;
+}
+/* Utility for mobile HERO sections that need more top padding due to fixed navbar */
+.section-hero {
+  padding-top: 10rem;
+}
+@media (max-width: 768px) {
+  .section-hero { padding-top: 8rem; }
 }
 .section-inner {
   max-width: 1200px;
@@ -228,6 +235,15 @@ p { margin-bottom: 1rem; }
 .shadow-hover { transition: box-shadow 0.3s, transform 0.3s; }
 .shadow-hover:hover { box-shadow: 0 15px 35px rgba(232,67,147,0.35); transform: translateY(-3px); }
 .button-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .button-group { flex-direction: column; width: 100%; }
+  .button-group .btn-rosa, 
+  .button-group .btn-hero,
+  .button-group .btn-outline-white {
+    width: 100%;
+    text-align: center;
+  }
+}
 .footer-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* ═══════════════════════════════════
@@ -672,10 +688,11 @@ p { margin-bottom: 1rem; }
    RESPONSIVE — 768px
    ═══════════════════════════════════ */
 @media (max-width: 768px) {
-  .section { padding: 3.5rem 2rem; }
+  .section { padding: 4rem 1.5rem; }
+  .section-hero { padding-top: 8rem; padding-bottom: 4rem; }
   .triada-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .triada-card { padding: 1.5rem; }
-  .triada-card .triada-icon { display: none; }
+  .triada-card .triada-icon { display: flex; transform: scale(0.85); margin-bottom: 0.8rem; }
   .platform-grid { grid-template-columns: 1fr; gap: 3rem; }
   .platform-img { order: -1; max-height: 450px; }
   .audience-grid { grid-template-columns: 1fr; gap: 2rem; }

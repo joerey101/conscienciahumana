@@ -15,7 +15,7 @@ export function UnaMirada() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--azul)' }}>Programa Grupal & Comunitario</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
@@ -25,7 +25,7 @@ export function UnaMirada() {
             Un programa de desarrollo emocional, conversación y apertura de posibilidades de cambio en contextos de vulnerabilidad.
           </p>
           <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-hero" style={{ display: 'inline-block', background: 'var(--azul)', color: 'white', border: 'none', padding: '1.2rem 2.5rem', fontSize: '1.1rem', borderRadius: 50 }}>
+            <Link to="/agenda" className="btn-hero" style={{ background: 'var(--azul)' }}>
               Consultar por esta línea de trabajo
             </Link>
           </div>
@@ -46,7 +46,7 @@ export function UnaMirada() {
                   "Dispositivos de acompañamiento",
                   "Grupos que requieren trabajo emocional con cuidado y contención"
                 ].map((item, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', background: '#F8F9FA', borderRadius: '12px' }}>
+                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: '#F8F9FA' }}>
                     <CheckCircle size={20} weight="fill" color="var(--azul)" style={{ flexShrink: 0 }} />
                     <span style={{ fontSize: '1.1rem', color: 'var(--texto)' }}>{item}</span>
                   </li>
@@ -78,7 +78,7 @@ export function UnaMirada() {
           <div className="reveal">
             <span className="section-tag section-tag-light mb-4" style={{ display: 'inline-block' }}>Implementación</span>
             <h2 className="section-title" style={{ textAlign: 'left' }}>Metodología y Formato</h2>
-            <div style={{ marginTop: '2.5rem', background: 'white', padding: '3rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+            <div className="triada-card" style={{ marginTop: '2.5rem', background: 'white' }}>
               <p className="text-lg" style={{ color: 'var(--texto)', lineHeight: 1.8, marginBottom: '2rem' }}>
                 Se compone de <strong>seis encuentros grupales</strong> en formato taller-conversatorio.
               </p>
@@ -113,7 +113,7 @@ export function UnaMirada() {
             "Nadie se transforma solo. La comunidad y el cuidado son fundamentales."
           </h2>
           <div className="reveal" style={{ animationDelay: '0.2s', marginTop: '2rem' }}>
-            <Link to="/agenda" className="btn-hero" style={{ display: 'inline-block', background: 'var(--azul)', color: 'white', border: 'none' }}>
+            <Link to="/agenda" className="btn-hero" style={{ background: 'var(--azul)', color: 'white', border: 'none' }}>
               Consultar por esta línea de trabajo
             </Link>
           </div>

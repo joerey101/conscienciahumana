@@ -15,7 +15,7 @@ export function Programas() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--rosa)' }}>Crecimiento Integral</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
@@ -24,11 +24,11 @@ export function Programas() {
           <p className="text-xl md:text-2xl max-w-4xl mx-auto reveal mb-10" style={{ color: 'var(--texto-light)', fontFamily: 'Lato', lineHeight: 1.6, fontWeight: 300, animationDelay: '0.1s' }}>
             En Consciencia Humana diseñamos programas y procesos para personas, equipos y organizaciones que necesitan claridad, dirección, nuevas herramientas y una forma más consciente de habitar la vida, los vínculos y el trabajo.
           </p>
-          <div className="reveal" style={{ animationDelay: '0.2s', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/agenda" className="btn-rosa shadow-hover" style={{ display: 'inline-block', padding: '1.2rem 2.5rem', fontSize: '1.1rem', borderRadius: 50 }}>
+          <div className="button-group reveal" style={{ animationDelay: '0.2s', justifyContent: 'center' }}>
+            <Link to="/agenda" className="btn-rosa shadow-hover">
               Quiero conocer cuál aplica para mí
             </Link>
-            <Link to="/organizaciones" className="btn-hero" style={{ display: 'inline-block', background: 'transparent', border: '2px solid var(--rosa)', color: 'var(--rosa)' }}>
+            <Link to="/organizaciones" className="btn-hero" style={{ background: 'transparent', border: '2px solid var(--rosa)', color: 'var(--rosa)' }}>
               Quiero llevarlo a mi organización
             </Link>
           </div>
@@ -42,10 +42,10 @@ export function Programas() {
             <h2 className="section-title">Para personas</h2>
           </div>
           
-          <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             
             {/* Card 1 */}
-            <div className="reveal" style={{ background: '#F8F9FA', padding: '3rem', borderRadius: '16px', display: 'flex', flexDirection: 'column', borderTop: '4px solid var(--rosa)' }}>
+            <div className="reveal triada-card" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', borderTop: '4px solid var(--rosa)', background: '#F8F9FA' }}>
               <h3 style={{ fontSize: '2rem', fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1rem' }}>El Salto de tu VIDA</h3>
               <p style={{ color: 'var(--texto)', fontSize: '1.1rem', marginBottom: '2rem', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
                 "Un proceso de evolución personal para reconocer, activar y sostener una nueva coherencia."
@@ -73,7 +73,7 @@ export function Programas() {
             </div>
 
             {/* Card 2 */}
-            <div className="reveal" style={{ background: '#F8F9FA', padding: '3rem', borderRadius: '16px', display: 'flex', flexDirection: 'column', borderTop: '4px solid var(--amarillo)' }}>
+            <div className="reveal triada-card" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', borderTop: '4px solid var(--amarillo)', background: '#F8F9FA' }}>
               <h3 style={{ fontSize: '2rem', fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1rem' }}>Proceso de Autoevaluación y Activación Interior</h3>
               <p style={{ color: 'var(--texto)', fontSize: '1.1rem', marginBottom: '2rem', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
                 "Un recorrido guiado para mirar con honestidad el presente y empezar a ordenar una nueva dirección."

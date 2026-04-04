@@ -15,7 +15,7 @@ export function Nosotros() {
       />
 
       {/* Hero */}
-      <section className="section bg-[#FDF9F3]" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+      <section className="section section-hero bg-[#FDF9F3]">
         <div className="section-inner text-center">
           <span className="section-tag reveal mb-4" style={{ display: 'inline-block', color: 'var(--rosa)' }}>El Espacio</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
@@ -37,7 +37,7 @@ export function Nosotros() {
             </p>
           </div>
           
-          <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto', background: '#F8F9FA', padding: '3rem', borderRadius: '16px' }}>
+          <div className="reveal triada-card" style={{ maxWidth: '800px', margin: '0 auto', background: '#F8F9FA' }}>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {[
                 "Reconocer lo que hoy pasa",
@@ -88,9 +88,9 @@ export function Nosotros() {
             </p>
           </div>
           
-          <div className="reveal" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
             {/* Placeholder Equipo 1 */}
-            <div style={{ background: 'white', padding: '3rem', borderRadius: '16px', textAlign: 'center', width: '300px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+            <div className="triada-card" style={{ textAlign: 'center', background: 'white' }}>
               <UserCircle size={100} weight="thin" color="var(--violeta-deep)" style={{ margin: '0 auto 1.5rem', opacity: 0.5 }} />
               <h3 style={{ fontSize: '1.3rem', color: 'var(--violeta-deep)', marginBottom: '0.5rem' }}>Nombre Apellido</h3>
               <p style={{ color: 'var(--rosa)', fontSize: '0.9rem', marginBottom: '1rem', fontWeight: 600 }}>Cofundador / Facilitador</p>
@@ -101,7 +101,7 @@ export function Nosotros() {
             </div>
             
             {/* Placeholder Equipo 2 */}
-            <div style={{ background: 'white', padding: '3rem', borderRadius: '16px', textAlign: 'center', width: '300px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+            <div className="triada-card" style={{ textAlign: 'center', background: 'white' }}>
               <UserCircle size={100} weight="thin" color="var(--violeta-deep)" style={{ margin: '0 auto 1.5rem', opacity: 0.5 }} />
               <h3 style={{ fontSize: '1.3rem', color: 'var(--violeta-deep)', marginBottom: '0.5rem' }}>Nombre Apellido</h3>
               <p style={{ color: 'var(--rosa)', fontSize: '0.9rem', marginBottom: '1rem', fontWeight: 600 }}>Cofundadora / Facilitadora</p>

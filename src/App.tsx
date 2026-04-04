@@ -2,6 +2,7 @@ import './styles/globals.css'
 import { Routes, Route } from 'react-router-dom'
 
 import { Navbar } from './components/layout/Navbar'
+import ScrollToTop from './components/layout/ScrollToTop'
 import { Footer } from './components/layout/Footer'
 import { Hero } from './components/sections/Hero'
 import { Conversacion } from './components/sections/Conversacion'
@@ -55,6 +56,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
