@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { Users, Target, Activity, Handshake, BookOpen, Heart, ShieldCheck, MessageSquare, Briefcase, ArrowRight, CheckCircle } from 'lucide-react'
+import { Users, Target, Activity, Handshake, ShieldCheck, MessageSquare, Briefcase, ArrowRight, CheckCircle } from 'lucide-react'
 import { organizacionesPage } from '../data/site'
 
 export function Organizaciones() {
