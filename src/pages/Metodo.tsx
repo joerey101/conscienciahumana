@@ -40,6 +40,8 @@ export function Metodo() {
       <section className="section section-light">
         <div className="section-inner">
           <VisualProgress 
+            headerTitle="Proceso Consciencia Humana"
+            headerSubtitle="Etapas del acompañamiento"
             procedures={[
               {
                 title: "Reconocer",

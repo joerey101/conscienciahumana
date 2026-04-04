@@ -29,7 +29,15 @@ const DefaultProcedures: Procedure[] = [
   }
 ];
 
-export const VisualProgress = ({ procedures = DefaultProcedures }: { procedures?: Procedure[] }) => {
+export const VisualProgress = ({ 
+  procedures = DefaultProcedures,
+  headerTitle = "Metodología",
+  headerSubtitle = "Proceso de acompañamiento"
+}: { 
+  procedures?: Procedure[],
+  headerTitle?: string,
+  headerSubtitle?: string
+}) => {
   return (
     <div className="vp-container animate-in slide-in-from-bottom duration-300">
       <div className="flex items-center gap-3 mb-6">
@@ -37,8 +45,8 @@ export const VisualProgress = ({ procedures = DefaultProcedures }: { procedures?
           <ClipboardCheck size={24} />
         </div>
         <div>
-          <h2 className="text-2xl font-black text-violet-900 uppercase tracking-tight" style={{ color: 'var(--violeta-deep)' }}>Proceso de Transformación</h2>
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Premium Module v1.2</p>
+          <h2 className="text-2xl font-black text-violet-900 uppercase tracking-tight" style={{ color: 'var(--violeta-deep)' }}>{headerTitle}</h2>
+          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{headerSubtitle}</p>
         </div>
       </div>
 
