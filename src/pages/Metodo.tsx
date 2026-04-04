@@ -16,9 +16,9 @@ export function Metodo() {
       />
 
       {/* Hero */}
-      <section className="section section-hero bg-[#FDF9F3]">
+      <section className="section section-hero bg-[#FDF9F3]" style={{ paddingBottom: '3rem' }}>
         <div className="section-inner text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
+          <h1 className="text-4xl md:text-6xl font-bold mb-10 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
             Método de autoevaluación, activación y sostenimiento
           </h1>
           <p className="text-xl md:text-2xl max-w-4xl mx-auto reveal" style={{ color: 'var(--texto-light)', fontFamily: 'Lato', lineHeight: 1.6, fontWeight: 300, animationDelay: '0.1s' }}>
@@ -28,7 +28,7 @@ export function Metodo() {
       </section>
 
       {/* Introducción */}
-      <section className="section bg-white" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <section className="section bg-white" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
         <div className="section-inner">
           <p className="text-xl md:text-2xl max-w-4xl mx-auto text-center reveal" style={{ color: 'var(--texto)', fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.8, fontStyle: 'italic' }}>
             "En Consciencia Humana no entendemos la transformación como un momento aislado ni como una experiencia meramente emocional. La entendemos como un proceso. Un proceso que empieza cuando una persona, un equipo o una organización acepta mirar con más verdad lo que hoy está viviendo, y se anima a revisar no solo lo que le pasa, sino también la forma en que responde a eso."
