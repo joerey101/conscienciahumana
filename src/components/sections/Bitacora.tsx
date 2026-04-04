@@ -48,7 +48,7 @@ export function Bitacora() {
           <h2 className="section-title" style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '3.5rem' }}>
             Bitácora de Consciencia
           </h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <p className="section-subtitle centered" style={{ margin: '0 auto', maxWidth: '100%' }}>
             Un espacio para cuestionar lo automático, activar claridad y entrenar una nueva forma de hacer y ser.
           </p>
           <div style={{ marginTop: '3rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>

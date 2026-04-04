@@ -33,21 +33,21 @@ export function Navbar() {
                 <use href="#petal" className="fch-petal p-yellow" fill="#FFF647" />
               </svg>
             </div>
-            <span>Fundación Consciencia Humana</span>
+            <span>Fundación<br/>Consciencia<br/>Humana</span>
           </Link>
           <ul className="navbar-links">
             {siteConfig.nav.map((item) => (
               <li key={item.href}>
-                {item.href.startsWith('#') ? (
-                  <a href={`/${item.href}`}>{item.label}</a>
-                ) : (
-                  <Link to={item.href}>{item.label}</Link>
-                )}
+                <Link to={item.href} className={location.pathname === item.href ? 'active' : ''}>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
-          <div className="navbar-actions">
-            {/* CTA button removed per user request */}
+          <div className="navbar-actions ml-10">
+            <Link to="/agenda" className="btn-rosa btn-sm">
+              Agendar conversación
+            </Link>
           </div>
           <button className="mobile-toggle" onClick={open} aria-label="Abrir menú" style={{ color: 'var(--texto)' }}>
             <List size={24} weight="bold" />
@@ -60,13 +60,16 @@ export function Navbar() {
         <button className="mobile-close" onClick={close} aria-label="Cerrar menú">
           <X size={22} weight="bold" />
         </button>
-        {siteConfig.nav.map((item) => (
-          item.href.startsWith('#') ? (
-            <a key={item.href} href={`/${item.href}`} onClick={close}>{item.label}</a>
-          ) : (
-            <Link key={item.href} to={item.href} onClick={close}>{item.label}</Link>
-          )
-        ))}
+        <div className="mobile-menu-links">
+          {siteConfig.nav.map((item) => (
+            <Link key={item.href} to={item.href} onClick={close} className={location.pathname === item.href ? 'active' : ''}>
+              {item.label}
+            </Link>
+          ))}
+          <Link to="/agenda" className="btn-rosa" onClick={close} style={{ marginTop: '2rem', display: 'block', textAlign: 'center' }}>
+            Agendar conversación
+          </Link>
+        </div>
       </div>
     </>
   )

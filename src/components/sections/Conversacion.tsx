@@ -11,11 +11,18 @@ export function Conversacion() {
   return (
     <section className="section section-light" id="nuestra-mirada">
       <div className="section-inner">
-        <div className="triada-intro reveal">
+        <div className="section-intro-centered reveal">
           <span className="section-tag">Nuestra Mirada</span>
-          <h2 className="section-title">La conversación que cambia todo</h2>
-          <p className="section-subtitle">
-            Proponemos reinstalar una conversación más poderosa: la que nace cuando empezás a observarte sin juicio y a responder desde tu mejor versión posible.
+          <h2 className="section-title">
+            <span>La conversación</span>
+            <span>que cambia todo</span>
+          </h2>
+          <p className="section-subtitle centered">
+            Proponemos reinstalar una conversación más poderosa: <br className="desktop-only" />
+            la que nace cuando empezás a observarte sin juicio y a responder desde tu mejor versión posible.
+          </p>
+          <p className="section-subtitle centered" style={{ marginTop: '1.5rem', maxWidth: '100%' }}>
+            Un espacio para cuestionar lo automático, activar claridad y entrenar una nueva forma de hacer y ser.
           </p>
         </div>
         <div className="triada-grid stagger" style={{ marginTop: '3rem' }}>

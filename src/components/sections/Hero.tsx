@@ -7,10 +7,8 @@ export function Hero() {
       <div className="hero-overlay" />
       <div className="hero-content">
         <h1>Volver a elegir cómo<br />querés vivir</h1>
-        <p>
-          Hay momentos en los que algo interno te dice que ya no alcanza con <br className="desktop-only" /> 
-          seguir funcionando. Cumplís. Respondés. Avanzás. Pero en algún punto <br className="desktop-only" /> 
-          aparece una pregunta silenciosa: <strong>¿Esto es todo?</strong>
+        <p style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
+          Hay momentos en los que algo interno te dice que ya no alcanza con seguir funcionando. Cumplís. Respondés. Avanzás. Pero en algún punto aparece una pregunta silenciosa: <strong>¿Esto es todo?</strong>
         </p>
         <p style={{ fontSize: '1.1rem', opacity: 0.85, fontWeight: 300 }}>
           Consciencia Humana le habla a quienes están listos para evolucionar.

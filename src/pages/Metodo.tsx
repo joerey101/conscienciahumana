@@ -1,113 +1,176 @@
-import { Link } from 'react-router-dom';
-import { PageSEO } from '../components/seo/PageSEO';
-import { useRevealAnimation } from '../hooks/useRevealAnimation';
-import { Eye, Zap, Anchor } from 'lucide-react';
-import { VisualProgress } from '../components/premium/VisualProgress';
+import { Link } from 'react-router-dom'
+import { PageSEO } from '../components/seo/PageSEO'
+import { useRevealAnimation } from '../hooks/useRevealAnimation'
+import { Eye, Zap, Anchor, CheckCircle, Users, ArrowRight } from 'lucide-react'
+import { VisualProgress } from '../components/premium/VisualProgress'
+import { metodoPage } from '../data/site'
 
 export function Metodo() {
-  useRevealAnimation();
+  useRevealAnimation()
 
   return (
     <main className="page-metodo">
       <PageSEO
-        title="Método | Reconocer, activar y sostener el cambio"
-        description="Conocé el método de Consciencia Humana: un proceso de autoevaluación, activación y sostenimiento para transformar hábitos, dirección y forma de habitar la vida y el trabajo."
+        title={metodoPage.seo.title}
+        description={metodoPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/metodo"
       />
 
       {/* Hero */}
-      <section className="section section-hero bg-[#FDF9F3]" style={{ paddingBottom: '1rem' }}>
-        <div className="section-inner text-center">
-          <h1 className="text-4xl md:text-6xl font-bold reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '2.5rem' }}>
-            Método de autoevaluación, activación y sostenimiento
-          </h1>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto reveal" style={{ color: 'var(--texto-light)', fontFamily: 'Lato', lineHeight: 1.6, fontWeight: 300, animationDelay: '0.1s' }}>
-            Un proceso para observar con honestidad la realidad actual, activar nuevas respuestas y construir una coherencia más estable en la vida, en los vínculos y en la forma de habitar el trabajo.
-          </p>
+      <section className="section section-hero bg-[#FDF9F3]">
+        <div className="section-inner">
+          <div className="section-intro-centered">
+            <h1 className="reveal section-title">
+              Método de autoevaluación, <br className="desktop-only" />
+              activación y sostenimiento
+            </h1>
+            <p className="reveal section-subtitle centered">
+              Un proceso para observar con honestidad la realidad actual, activar nuevas respuestas <br className="desktop-only" />
+              y construir una coherencia más estable en la vida, en los vínculos y en la forma de habitar el trabajo.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Introducción */}
-      <section className="section bg-white" style={{ paddingTop: '1rem', paddingBottom: '3rem' }}>
+      <section className="section bg-white">
         <div className="section-inner">
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto text-center reveal" style={{ color: 'var(--texto)', fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.8, fontStyle: 'italic' }}>
-            "En Consciencia Humana no entendemos la transformación como un momento aislado ni como una experiencia meramente emocional. La entendemos como un proceso. Un proceso que empieza cuando una persona, un equipo o una organización acepta mirar con más verdad lo que hoy está viviendo, y se anima a revisar no solo lo que le pasa, sino también la forma en que responde a eso."
-          </p>
+          <div className="max-w-4xl mx-auto space-y-8">
+            {metodoPage.intro.map((p, i) => (
+              <p key={i} className="reveal text-xl" style={{ color: 'var(--texto)', lineHeight: 1.8, textAlign: 'center' }}>
+                {p}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* El Método - Visual Progress */}
-      <section className="section section-light">
+      <section className="section section-light" id="el-metodo">
         <div className="section-inner">
           <VisualProgress 
             headerTitle="Proceso Consciencia Humana"
             headerSubtitle="Etapas del acompañamiento"
             procedures={[
               {
-                title: "Reconocer",
+                title: metodoPage.pasos[0].title,
                 icon: Eye,
-                steps: [
-                  "Registro interno de sensaciones",
-                  "Identificación de patrones repetidos",
-                  "Lectura de zonas de desgaste emocional",
-                  "Observación de hábitos automáticos",
-                  "Detección de ruido y dispersión",
-                  "Sinceramiento de resultados reales"
-                ]
+                steps: metodoPage.pasos[0].items
               },
               {
-                title: "Activar",
+                title: metodoPage.pasos[1].title,
                 icon: Zap,
-                steps: [
-                  "Definición de foco y dirección",
-                  "Recuperación de la capacidad de decidir",
-                  "Diseño de disciplina consciente",
-                  "Nueva narrativa y lenguaje",
-                  "Acción alineada al propósito",
-                  "Compromiso con el movimiento"
-                ]
+                steps: metodoPage.pasos[1].items
               },
               {
-                title: "Sostener",
+                title: metodoPage.pasos[2].title,
                 icon: Anchor,
-                steps: [
-                  "Construcción de coherencia cotidiana",
-                  "Dispositivos de seguimiento rítmico",
-                  "Prácticas de recentrado urgente",
-                  "Calidad en la comunicación",
-                  "Revisión y ajuste de desvíos",
-                  "Flexibilidad sin perder el centro"
-                ]
+                steps: metodoPage.pasos[2].items
               }
             ]}
           />
+          
+          <div className="mt-20 grid md:grid-cols-3 gap-12">
+            {metodoPage.pasos.map((paso) => (
+              <div key={paso.id} className="reveal bg-white p-8 rounded-3xl shadow-sm border border-black/5">
+                <h3 className="text-2xl font-bold mb-2" style={{ color: 'var(--violeta-deep)' }}>{paso.title}</h3>
+                <p className="text-sm font-semibold mb-4" style={{ color: 'var(--rosa)' }}>{paso.subtitle}</p>
+                <p className="text-base text-gray-600 leading-relaxed">{paso.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Cómo se vive */}
+      {/* Cómo trabajamos */}
       <section className="section bg-white">
-        <div className="section-inner text-center">
-          <h2 className="section-title reveal">Cómo se vive este proceso</h2>
-          <p className="text-lg max-w-3xl mx-auto reveal" style={{ color: 'var(--texto-light)', lineHeight: 1.8 }}>
-            Nuestra forma de acompañar combina espacios conversatorios guiados, escucha atenta y sin juicio, ejercicios simples y aplicables, reflexión individual y grupal, y herramientas para trasladar lo trabajado a la vida diaria.
-          </p>
+        <div className="section-inner">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="reveal">
+              <h2 className="section-title mb-6">{metodoPage.comoTrabajamos.title}</h2>
+              <p className="text-lg mb-8" style={{ color: 'var(--texto-light)' }}>{metodoPage.comoTrabajamos.intro}</p>
+              <ul className="space-y-4">
+                {metodoPage.comoTrabajamos.items.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle className="text-green-500 shrink-0" size={20} />
+                    <span className="text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="reveal bg-violet-50 p-10 rounded-[40px] border border-violet-100">
+              <p className="italic text-lg text-violet-800 leading-relaxed">
+                "{metodoPage.comoTrabajamos.párrafoAdicional}"
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="section section-dark text-center" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      {/* Para quién */}
+      <section className="section section-light">
         <div className="section-inner">
-          <h2 className="section-title text-white reveal mb-4">Mirar distinto puede cambiar lo que sigue</h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto reveal" style={{ animationDelay: '0.1s' }}>
-            Todo proceso empieza cuando algo deja de poder seguir igual.
+          <div className="section-intro-centered mb-16">
+            <h2 className="reveal section-title">{metodoPage.paraQuien.title}</h2>
+            <p className="reveal section-subtitle centered">{metodoPage.paraQuien.intro}</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {metodoPage.paraQuien.items.map((item, i) => (
+              <div key={i} className="reveal bg-white p-6 rounded-2xl flex items-center gap-4 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                  <Users className="text-violet-600" size={20} />
+                </div>
+                <span className="font-medium text-gray-800">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Qué habilita */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <div className="grid md:grid-cols-2 gap-16">
+            <div className="reveal order-2 md:order-1">
+              <div className="bg-amber-50 p-10 rounded-[40px] border border-amber-100">
+                <p className="text-lg text-amber-900 leading-relaxed">
+                  {metodoPage.habilitar.párrafoAdicional}
+                </p>
+              </div>
+            </div>
+            <div className="reveal order-1 md:order-2">
+              <h2 className="section-title mb-6">{metodoPage.habilitar.title}</h2>
+              <p className="text-lg mb-8" style={{ color: 'var(--texto-light)' }}>{metodoPage.habilitar.intro}</p>
+              <div className="grid gap-4">
+                {metodoPage.habilitar.items.map((item, i) => (
+                  <div key={i} className="flex gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                    <span className="text-amber-500 shrink-0 font-bold text-2xl" style={{ lineHeight: '1.2' }}>•</span>
+                    <span className="text-lg font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cierre */}
+      <section className="section section-dark text-center overflow-hidden">
+        <div className="section-inner relative z-10">
+          <h2 className="reveal section-title text-white mb-6">
+            {metodoPage.cierre.title}
+          </h2>
+          <p className="reveal text-2xl font-light mb-12 max-w-3xl mx-auto text-white/90">
+            {metodoPage.cierre.text}
           </p>
-          <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-rosa" style={{ display: 'inline-block' }}>
-              Quiero conversar sobre este proceso
+          <div className="reveal">
+            <Link to="/agenda" className="btn-rosa btn-hero">
+              {metodoPage.cierre.cta}
+              <ArrowRight className="inline-block ml-2" size={20} />
             </Link>
           </div>
         </div>
       </section>
     </main>
-  );
+  )
 }

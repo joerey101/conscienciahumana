@@ -1,63 +1,85 @@
-import { Link } from 'react-router-dom';
-import { PageSEO } from '../../components/seo/PageSEO';
-import { useRevealAnimation } from '../../hooks/useRevealAnimation';
-import { CheckCircle } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom'
+import { PageSEO } from '../../components/seo/PageSEO'
+import { useRevealAnimation } from '../../hooks/useRevealAnimation'
+import { CheckCircle, ArrowRight, ClipboardCheck, Sparkles, Target, Zap } from 'lucide-react'
+import { autoevaluacionPage } from '../../data/site'
 
 export function AutoevaluacionActivacion() {
-  useRevealAnimation();
+  useRevealAnimation()
 
   return (
     <main className="page-programa-individual">
       <PageSEO 
-        title="Autoevaluación y Activación Interior | Programa guiado"
-        description="Un recorrido guiado para observar con honestidad el presente, ordenar prioridades, activar hábitos y construir una nueva dirección personal con más coherencia."
+        title={autoevaluacionPage.seo.title}
+        description={autoevaluacionPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/programas/proceso-de-autoevaluacion-y-activacion-interior"
       />
 
       {/* Hero */}
       <section className="section section-hero bg-[#FDF9F3]">
-        <div className="section-inner text-center">
-          <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--amarillo)' }}>Programa Base</span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
-            Proceso de Autoevaluación y Activación Interior
-          </h1>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto reveal mb-10" style={{ color: 'var(--texto-light)', fontFamily: 'Lato', lineHeight: 1.6, fontWeight: 300, animationDelay: '0.1s' }}>
-            Una puerta de entrada a la metodología Consciencia Humana para quienes necesitan claridad, cambio, hábitos, foco o acompañamiento.
-          </p>
-          <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-hero" style={{ background: 'var(--amarillo)' }}>
-              Quiero empezar por acá
-            </Link>
+        <div className="section-inner">
+          <div className="section-intro-centered">
+            <span className="section-tag section-tag-light reveal mb-6" style={{ display: 'inline-block', color: 'var(--rosa)' }}>Proceso Guiado</span>
+            <h1 className="reveal section-title">
+              {autoevaluacionPage.hero.title}
+            </h1>
+            <p className="reveal section-subtitle centered">
+              {autoevaluacionPage.hero.subtitle}
+            </p>
+            <div className="reveal">
+              <Link to="/agenda" className="btn-rosa btn-hero">
+                {autoevaluacionPage.ctas.primary}
+                <ArrowRight className="inline-block ml-2" size={20} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Detalles */}
-      <section className="section bg-white" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      {/* Introducción */}
+      <section className="section bg-white">
         <div className="section-inner">
-          <div className="grid-2-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
-            
-            <div className="reveal">
-              <h2 className="section-title" style={{ fontSize: '2rem', textAlign: 'left', marginBottom: '2rem' }}>¿Para quién es?</h2>
-              <p className="triada-card" style={{ fontSize: '1.1rem', color: 'var(--texto-light)', lineHeight: 1.8, background: '#F8F9FA', borderLeft: '4px solid var(--amarillo)' }}>
-                Personas en momento de revisión personal que necesitan estructura para observar lo que hoy les pasa, nombrar lo que ya no funciona, y empezar a activar decisiones, hábitos y dirección.
+          <div className="max-w-4xl mx-auto space-y-8">
+            {autoevaluacionPage.textLargo.map((p, i) => (
+              <p key={i} className="reveal text-xl text-center leading-relaxed" style={{ color: 'var(--texto)' }}>
+                {p}
               </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Secciones: Para quién y Qué trabaja */}
+      <section className="section section-light">
+        <div className="section-inner">
+          <div className="grid md:grid-cols-2 gap-12">
+            
+            <div className="reveal bg-white p-10 rounded-[32px] border border-gray-100 shadow-sm">
+              <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center mb-8">
+                <Target className="text-amber-600" size={24} />
+              </div>
+              <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--violeta-deep)' }}>{autoevaluacionPage.paraQuien.title}</h2>
+              <p className="text-gray-600 mb-8">{autoevaluacionPage.paraQuien.intro}</p>
+              <ul className="space-y-4">
+                {autoevaluacionPage.paraQuien.items.map((item, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <CheckCircle size={20} className="text-amber-500 shrink-0 mt-1" />
+                    <span className="text-lg text-gray-700 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="reveal" style={{ animationDelay: '0.1s' }}>
-              <h2 className="section-title" style={{ fontSize: '2rem', textAlign: 'left', marginBottom: '2rem' }}>¿Qué trabajamos?</h2>
-              <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                {[
-                  "Autoobservación",
-                  "Claridad",
-                  "Activación interior",
-                  "Hábitos",
-                  "Seguimiento",
-                  "Coherencia"
-                ].map((item, idx) => (
-                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem', background: '#FDF9F3' }}>
-                    <CheckCircle size={20} weight="fill" color="var(--amarillo)" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '1.05rem', color: 'var(--texto)' }}>{item}</span>
+            <div className="reveal bg-white p-10 rounded-[32px] border border-gray-100 shadow-sm">
+              <div className="w-12 h-12 bg-violet-50 rounded-2xl flex items-center justify-center mb-8">
+                <Zap className="text-violet-600" size={24} />
+              </div>
+              <h2 className="text-2xl font-bold mb-8" style={{ color: 'var(--violeta-deep)' }}>{autoevaluacionPage.queTrabaja.title}</h2>
+              <ul className="space-y-4">
+                {autoevaluacionPage.queTrabaja.items.map((item, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <ClipboardCheck size={20} className="text-violet-500 shrink-0 mt-1" />
+                    <span className="text-lg text-gray-700 leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -67,30 +89,35 @@ export function AutoevaluacionActivacion() {
         </div>
       </section>
 
-      {/* Diferencial */}
-      <section className="section section-light" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="section-inner text-center">
-          <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block' }}>Enfoque Práctico</span>
-          <h2 className="section-title reveal">Un abordaje realista y aplicable</h2>
-          <p className="text-xl max-w-4xl mx-auto reveal" style={{ color: 'var(--texto-light)', lineHeight: 1.8, marginTop: '2.5rem' }}>
-            El nombre del programa refleja su objetivo central: ser sobrio, directo y fácil de encajar tanto en ámbitos de desarrollo de vida como en espacios corporativos y formativos, alejándose del misticismo y acercándose a la utilidad pura.
+      {/* Valor Diferencial */}
+      <section className="section bg-white text-center">
+        <div className="section-inner max-w-4xl mx-auto">
+          <div className="reveal mb-8">
+            <Sparkles size={48} className="text-amber-400 mx-auto" />
+          </div>
+          <h2 className="reveal section-title mb-6">{autoevaluacionPage.valor.title}</h2>
+          <p className="reveal text-2xl font-light leading-relaxed text-gray-600">
+            {autoevaluacionPage.valor.text}
           </p>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="section section-dark text-center" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      {/* Cierre */}
+      <section className="section bg-[#FDF9F3] text-center">
         <div className="section-inner">
-          <h2 className="section-title text-white reveal mb-6" style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '2.5rem' }}>
-            "No se puede ajustar una dirección si no se revisa primero el punto de partida."
-          </h2>
-          <div className="reveal" style={{ animationDelay: '0.2s', marginTop: '2rem' }}>
-            <Link to="/agenda" className="btn-hero" style={{ background: 'var(--amarillo)', color: 'white', border: 'none' }}>
-              Quiero empezar por acá
+          <div className="reveal">
+            <Link to="/agenda" className="btn-rosa btn-hero">
+              {autoevaluacionPage.ctas.primary}
+              <ArrowRight className="inline-block ml-2" size={20} />
+            </Link>
+          </div>
+          <div className="mt-8 reveal">
+            <Link to="/programas" className="text-violet-600 font-bold hover:underline">
+              {autoevaluacionPage.ctas.secondary}
             </Link>
           </div>
         </div>
       </section>
     </main>
-  );
+  )
 }

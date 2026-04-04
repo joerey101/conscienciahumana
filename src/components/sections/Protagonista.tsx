@@ -11,13 +11,14 @@ export function Protagonista() {
   return (
     <section className="section section-light" id="protagonista">
       <div className="section-inner">
-        <div className="triada-intro reveal" style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
+        <div className="section-intro-centered reveal">
           <span className="section-tag">Posicionamiento Interior</span>
           <h2 className="section-title">El arquetipo del protagonista</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            En un entorno cambiante, el protagonista no controla todo. Pero sí elige su respuesta. Cuando asumís ese lugar, aumenta tu claridad, tu energía y tu capacidad de influencia.
+          <p className="section-subtitle centered">
+            En un entorno cambiante, el protagonista no controla todo. Pero sí elige su respuesta. <br className="desktop-only" />
+            Cuando asumís ese lugar, aumenta tu claridad, tu energía y tu capacidad de influencia.
           </p>
-          <p style={{ marginTop: '1.5rem', color: 'var(--texto-light)' }}>
+          <p style={{ marginTop: '1.5rem', color: 'var(--texto-light)' }} className="centered">
             No se trata de negar el caos externo. Se trata de fortalecer tu equilibrio interior.
           </p>
         </div>

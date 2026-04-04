@@ -67,10 +67,6 @@ export const VisualProgress = ({
                 </li>
               ))}
             </ul>
-            {/* Background subtile icon */}
-            <div className="absolute -bottom-4 -right-4 opacity-[0.03] text-violet-950">
-              <proc.icon size={120} />
-            </div>
           </div>
         ))}
       </div>

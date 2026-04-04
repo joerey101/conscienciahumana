@@ -1,73 +1,84 @@
-import { Link } from 'react-router-dom';
-import { PageSEO } from '../../components/seo/PageSEO';
-import { useRevealAnimation } from '../../hooks/useRevealAnimation';
-import { CheckCircle, CircleNotch } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom'
+import { PageSEO } from '../../components/seo/PageSEO'
+import { useRevealAnimation } from '../../hooks/useRevealAnimation'
+import { CheckCircle, Zap, ArrowRight, Target, ShieldCheck, Sparkles } from 'lucide-react'
+import { elSaltoPage } from '../../data/site'
 
 export function ElSalto() {
-  useRevealAnimation();
+  useRevealAnimation()
 
   return (
     <main className="page-programa-individual">
       <PageSEO 
-        title="El Salto de tu VIDA | Programa de evolución personal"
-        description="Un proceso de evolución personal para reconocer la incomodidad actual, activar nuevas respuestas y sostener una coherencia más consciente en la vida cotidiana."
+        title={elSaltoPage.seo.title}
+        description={elSaltoPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/programas/el-salto-de-tu-vida"
       />
 
       {/* Hero */}
       <section className="section section-hero bg-[#FDF9F3]">
-        <div className="section-inner text-center">
-          <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--rosa)' }}>Programa Personal</span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
-            El Salto de tu VIDA
-          </h1>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto reveal mb-10" style={{ color: 'var(--texto-light)', fontFamily: 'Lato', lineHeight: 1.6, fontWeight: 300, animationDelay: '0.1s' }}>
-            Un proceso de evolución personal organizado en tres etapas: Reconocimiento, Activación y Sustentabilidad.
-          </p>
-          <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-rosa shadow-hover">
-              Quiero conocer este programa
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Detalles: Para quién y Qué trabaja */}
-      <section className="section bg-white" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <div className="section-inner">
-          <div className="grid-2-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
-            
+          <div className="section-intro-centered">
+            <span className="section-tag section-tag-light reveal mb-6" style={{ display: 'inline-block', color: 'var(--rosa)' }}>{elSaltoPage.estructura.tag}</span>
+            <h1 className="reveal section-title">
+              {elSaltoPage.hero.title}
+            </h1>
+            <p className="reveal section-subtitle centered">
+              {elSaltoPage.hero.subtitle}
+            </p>
             <div className="reveal">
-              <h2 className="section-title" style={{ fontSize: '2rem', textAlign: 'left', marginBottom: '2rem' }}>¿Para quién es?</h2>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {[
-                  "Personas con agotamiento o desconexión.",
-                  "Quienes quieren revisar sus hábitos y dirección de vida.",
-                  "Quienes necesitan claridad interna.",
-                  "Aquellos que sienten que sus resultados actuales no expresan quiénes son ni cómo quieren vivir."
-                ].map((item, idx) => (
-                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', background: '#F8F9FA' }}>
-                    <CheckCircle size={24} weight="fill" color="var(--violeta-deep)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ fontSize: '1.1rem', color: 'var(--texto)' }}>{item}</span>
+              <Link to="/agenda" className="btn-rosa btn-hero">
+                {elSaltoPage.ctas.primary}
+                <ArrowRight className="inline-block ml-2" size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Introducción */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {elSaltoPage.textLargo.map((p, i) => (
+              <p key={i} className="reveal text-xl text-center leading-relaxed" style={{ color: 'var(--texto)' }}>
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Secciones: Para quién y Qué trabaja */}
+      <section className="section section-light">
+        <div className="section-inner">
+          <div className="grid md:grid-cols-2 gap-12">
+            
+            <div className="reveal bg-white p-10 rounded-[32px] border border-gray-100 shadow-sm">
+              <div className="w-12 h-12 bg-violet-50 rounded-2xl flex items-center justify-center mb-8">
+                <Target className="text-violet-600" size={24} />
+              </div>
+              <h2 className="text-2xl font-bold mb-8" style={{ color: 'var(--violeta-deep)' }}>{elSaltoPage.paraQuien.title}</h2>
+              <ul className="space-y-4">
+                {elSaltoPage.paraQuien.items.map((item, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <CheckCircle size={20} className="text-violet-500 shrink-0 mt-1" />
+                    <span className="text-lg text-gray-700 leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="reveal" style={{ animationDelay: '0.1s' }}>
-              <h2 className="section-title" style={{ fontSize: '2rem', textAlign: 'left', marginBottom: '2rem' }}>¿Qué trabajamos?</h2>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                {[
-                  "Claridad interna.",
-                  "Observación de hábitos y patrones automáticos.",
-                  "Revisión de resultados pasados.",
-                  "Activación de nuevas respuestas.",
-                  "Disciplina consciente.",
-                  "Alineamiento y sostén."
-                ].map((item, idx) => (
-                  <li key={idx} className="triada-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', background: '#FDF9F3' }}>
-                    <CircleNotch size={24} weight="bold" color="var(--rosa)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ fontSize: '1.1rem', color: 'var(--texto)' }}>{item}</span>
+            <div className="reveal bg-white p-10 rounded-[32px] border border-gray-100 shadow-sm">
+              <div className="w-12 h-12 bg-pink-50 rounded-2xl flex items-center justify-center mb-8">
+                <Zap className="text-rosa" size={24} />
+              </div>
+              <h2 className="text-2xl font-bold mb-8" style={{ color: 'var(--violeta-deep)' }}>{elSaltoPage.queTrabaja.title}</h2>
+              <ul className="space-y-4">
+                {elSaltoPage.queTrabaja.items.map((item, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <ShieldCheck size={20} className="text-rosa shrink-0 mt-1" />
+                    <span className="text-lg text-gray-700 leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -77,61 +88,64 @@ export function ElSalto() {
         </div>
       </section>
 
-      {/* Estructura del proceso */}
-      <section className="section section-light" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="section-inner text-center">
-          <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block' }}>Metodología</span>
-          <h2 className="section-title reveal">Estructura del proceso</h2>
+      {/* Estructura - Etapas */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <div className="text-center mb-16">
+            <h2 className="reveal section-title">{elSaltoPage.estructura.title}</h2>
+          </div>
           
-          <div className="reveal" style={{ marginTop: '3rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', alignItems: 'center' }}>
-            <div className="triada-card" style={{ background: 'white', width: '280px' }}>
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '0.5rem' }}>1. Reconocer</h3>
-              <p style={{ color: 'var(--texto-light)' }}>Observación y diagnóstico honesto del presente.</p>
-            </div>
-            
-            <div className="desktop-only" style={{ color: 'var(--rosa)', fontSize: '2rem' }}>→</div>
-            
-            <div className="triada-card" style={{ background: 'white', width: '280px' }}>
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '0.5rem' }}>2. Activar</h3>
-              <p style={{ color: 'var(--texto-light)' }}>Implementación de herramientas y nuevas respuestas.</p>
-            </div>
-
-            <div className="desktop-only" style={{ color: 'var(--rosa)', fontSize: '2rem' }}>→</div>
-
-            <div className="triada-card" style={{ background: 'white', width: '280px' }}>
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--violeta-deep)', fontFamily: 'Poppins', marginBottom: '0.5rem' }}>3. Sostener</h3>
-              <p style={{ color: 'var(--texto-light)' }}>Construcción de hábitos y seguimiento de coherencia.</p>
-            </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {elSaltoPage.estructura.pasos.map((etapa, i) => (
+              <div key={i} className="reveal group bg-gray-50 p-10 rounded-[40px] border border-transparent hover:border-violet-200 hover:bg-violet-50/50 transition-all">
+                <div className="text-4xl font-black text-gray-200 group-hover:text-violet-200 transition-colors mb-6">
+                  {(i + 1).toString().padStart(2, '0')}
+                </div>
+                <h3 className="text-2xl font-bold" style={{ color: 'var(--violeta-deep)' }}>{etapa}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Resultados */}
-      <section className="section bg-white" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="section-inner text-center">
-          <h2 className="section-title reveal" style={{ fontSize: '2.5rem', color: 'var(--violeta-deep)' }}>Resultado Esperado</h2>
-          <p className="text-xl max-w-4xl mx-auto reveal" style={{ color: 'var(--texto-light)', lineHeight: 1.8, marginTop: '2.5rem' }}>
-            Más claridad para decidir, menos dispersión, mayor coherencia entre intención y acción, y, fundamentalmente, la incorporación de herramientas internas para volver al centro cuando el ritmo de vida desordena el proceso.
-          </p>
+      <section className="section bg-violet-900 text-white overflow-hidden relative">
+        <div className="section-inner relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="reveal">
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                {elSaltoPage.resultado.title}
+              </h2>
+              <p className="text-xl text-white/80 leading-relaxed">
+                {elSaltoPage.resultado.text}
+              </p>
+            </div>
+            <div className="reveal flex justify-center">
+              <Sparkles size={120} className="text-amber-400 opacity-50" />
+            </div>
+          </div>
         </div>
+        {/* Background blobs */}
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-rosa opacity-20 blur-[100px] rounded-full"></div>
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-violet-400 opacity-20 blur-[100px] rounded-full"></div>
       </section>
 
-      {/* CTA Final */}
-      <section className="section section-dark text-center" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      {/* Cierre */}
+      <section className="section bg-[#FDF9F3] text-center">
         <div className="section-inner">
-          <h2 className="section-title text-white reveal mb-6" style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '2.5rem' }}>
-            "Es momento de mirar y activar un movimiento real."
-          </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto reveal" style={{ animationDelay: '0.1s' }}>
-            Un programa que acompaña el salto que necesitás dar.
-          </p>
-          <div className="reveal" style={{ animationDelay: '0.2s' }}>
-            <Link to="/agenda" className="btn-rosa" style={{ display: 'inline-block' }}>
-              Quiero conocer este programa
+          <div className="reveal">
+            <Link to="/agenda" className="btn-rosa btn-hero">
+              {elSaltoPage.ctas.primary}
+              <ArrowRight className="inline-block ml-2" size={20} />
+            </Link>
+          </div>
+          <div className="mt-8 reveal">
+            <Link to="/programas" className="text-violet-600 font-bold hover:underline">
+              {elSaltoPage.ctas.secondary}
             </Link>
           </div>
         </div>
       </section>
     </main>
-  );
+  )
 }

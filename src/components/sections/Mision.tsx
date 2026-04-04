@@ -2,9 +2,9 @@ export function Mision() {
   return (
     <section className="section section-light" id="nuestra-mision">
       <div className="section-inner">
-        <div className="triada-intro reveal" style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+        <div className="section-intro-centered reveal">
           <span className="section-tag">Nuestra Misión</span>
-          <h2 className="section-title" style={{ marginBottom: '4rem' }}>
+          <h2 className="section-title">
             Contribuir a una sociedad <br /> donde las personas se sientan <br /> orgullosas de pertenecer
           </h2>
           <div className="mission-grid" style={{ textAlign: 'left', padding: '0 1rem' }}>

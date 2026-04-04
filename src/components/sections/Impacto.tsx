@@ -31,11 +31,12 @@ export function Impacto() {
   return (
     <section className="section section-dark" id="impacto">
       <div className="section-inner">
-        <div className="triada-intro reveal" style={{ marginBottom: '3rem' }}>
+        <div className="section-intro-centered reveal">
           <span className="section-tag section-tag-light">Resultados</span>
           <h2 className="section-title">Transformación con sentido</h2>
-          <p className="section-subtitle-light" style={{ margin: '0 auto', maxWidth: 700 }}>
-            El impacto de nuestros procesos se refleja en mayor claridad, equipos más alineados y liderazgos más responsables. Creemos que cada proceso individual aporta a una transformación colectiva más amplia.
+          <p className="section-subtitle-light centered">
+            El impacto de nuestros procesos se refleja en mayor claridad, equipos más alineados y liderazgos más responsables. <br className="desktop-only" />
+            Creemos que cada proceso individual aporta a una transformación colectiva más amplia.
           </p>
         </div>
         <div className="metrics-grid stagger">

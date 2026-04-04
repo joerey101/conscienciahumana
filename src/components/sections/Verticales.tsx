@@ -12,8 +12,8 @@ export function Verticales() {
   return (
     <section className="section section-white" id="verticales">
       <div className="section-inner">
-        <div className="triada-intro reveal">
-          <span className="section-tag">Nuestras verticales de acción</span>
+        <div className="section-intro-centered reveal">
+          <h2 className="section-title">Nuestras verticales de acción</h2>
         </div>
         <div className="triada-grid stagger">
           {verticalesData.map((v) => (

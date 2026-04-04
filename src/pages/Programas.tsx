@@ -1,196 +1,230 @@
-import { Link } from 'react-router-dom';
-import { PageSEO } from '../components/seo/PageSEO';
-import { useRevealAnimation } from '../hooks/useRevealAnimation';
-import { ArrowRight, CheckCircle } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom'
+import { PageSEO } from '../components/seo/PageSEO'
+import { useRevealAnimation } from '../hooks/useRevealAnimation'
+import { ArrowRight, CheckCircle, Target, Users, BookOpen, Building2 } from 'lucide-react'
+import { programasPage } from '../data/site'
 
 export function Programas() {
-  useRevealAnimation();
+  useRevealAnimation()
 
   return (
     <main className="page-programas">
       <PageSEO 
-        title="Programas | Transformación personal y grupal aplicada"
-        description="Explorá los programas de Consciencia Humana para personas, grupos y organizaciones: procesos guiados de claridad, activación, hábitos, bienestar y coherencia."
+        title={programasPage.seo.title}
+        description={programasPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/programas"
       />
 
       {/* Hero */}
       <section className="section section-hero bg-[#FDF9F3]">
-        <div className="section-inner text-center">
-          <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block', color: 'var(--rosa)' }}>Crecimiento Integral</span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 reveal" style={{ color: 'var(--violeta-deep)', fontFamily: 'Poppins' }}>
-            Programas para mirar, activar y sostener un cambio real
-          </h1>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto reveal mb-10" style={{ color: 'var(--texto-light)', fontFamily: 'Lato', lineHeight: 1.6, fontWeight: 300, animationDelay: '0.1s' }}>
-            En Consciencia Humana diseñamos programas y procesos para personas, equipos y organizaciones que necesitan claridad, dirección, nuevas herramientas y una forma más consciente de habitar la vida, los vínculos y el trabajo.
-          </p>
-          <div className="button-group reveal" style={{ animationDelay: '0.2s', justifyContent: 'center' }}>
-            <Link to="/agenda" className="btn-rosa shadow-hover">
-              Quiero conocer cuál aplica para mí
-            </Link>
-            <Link to="/organizaciones" className="btn-hero" style={{ background: 'transparent', border: '2px solid var(--rosa)', color: 'var(--rosa)' }}>
-              Quiero llevarlo a mi organización
-            </Link>
+        <div className="section-inner">
+          <div className="section-intro-centered">
+            <h1 className="reveal section-title">
+              Programas para mirar, <br className="desktop-only" />
+              activar y sostener un cambio real
+            </h1>
+            <p className="reveal section-subtitle centered">
+              En Consciencia Humana diseñamos programas y procesos para personas, equipos y organizaciones que necesitan claridad, <br className="desktop-only" />
+              dirección, nuevas herramientas y una forma más consciente de habitar la vida, los vínculos y el trabajo.
+            </p>
+            <div className="button-group reveal" style={{ justifyContent: 'center', marginTop: '3rem' }}>
+              <Link to="/agenda" className="btn-rosa shadow-hover">
+                {programasPage.hero.ctas.persona}
+              </Link>
+              <Link to="/organizaciones" className="btn-outline-violeta" style={{ border: '2px solid var(--violeta-soft)', color: 'var(--violeta-soft)', borderRadius: '50px', padding: '0.9rem 2rem', fontWeight: '700', textDecoration: 'none' }}>
+                {programasPage.hero.ctas.organizacion}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Para personas (2 cards) */}
-      <section className="section bg-white" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      {/* Intro */}
+      <section className="section bg-white">
         <div className="section-inner">
-          <div className="reveal text-center mb-12">
-            <h2 className="section-title">Para personas</h2>
+          <div className="max-w-4xl mx-auto space-y-6">
+            {programasPage.intro.map((p, i) => (
+              <p key={i} className="reveal text-xl text-center leading-relaxed" style={{ color: 'var(--texto)' }}>
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Programa Marco */}
+      <section className="section bg-violet-50/50">
+        <div className="section-inner">
+          <div className="reveal bg-white p-12 md:p-16 rounded-[40px] border border-violet-100 shadow-sm max-w-5xl mx-auto">
+            <div className="flex flex-col gap-12">
+              <div>
+                <span className="section-tag">Marco Rector</span>
+                <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--violeta-deep)' }}>{programasPage.programaMarco.title}</h2>
+                <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+                  {programasPage.programaMarco.text}
+                </p>
+                <div className="flex flex-wrap items-center gap-4">
+                  {programasPage.programaMarco.subestructura.map(item => (
+                    <span key={item} className="px-6 py-3 bg-violet-50 text-violet-700 rounded-full font-bold text-base border border-violet-100 shadow-sm">
+                      {item}
+                    </span>
+                  ))}
+                  <Link to="/metodo" className="btn-rosa shadow-hover" style={{ textDecoration: 'none', borderRadius: '50px', padding: '0.75rem 1.5rem', display: 'inline-flex', alignItems: 'center' }}>
+                    {programasPage.programaMarco.cta}
+                  </Link>
+                </div>
+              </div>
+              <div className="w-full bg-violet-50/50 p-10 rounded-[32px] border border-violet-100/50">
+                <p className="text-xl md:text-2xl text-violet-900 leading-relaxed italic text-center font-medium">
+                  "{programasPage.programaMarco.footer}"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Para Personas */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <div className="section-intro-centered mb-16">
+            <h2 className="reveal section-title">{programasPage.paraPersonas.title}</h2>
+            <p className="reveal section-subtitle centered">
+              Espacios pensados para quienes sienten que algo necesita ser revisado, <br className="desktop-only" />
+              ordenado o activado en su forma de vivir, decidir, vincularse y sostener dirección.
+            </p>
           </div>
           
-          <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            
-            {/* Card 1 */}
-            <div className="reveal triada-card" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', borderTop: '4px solid var(--rosa)', background: '#F8F9FA' }}>
-              <h3 style={{ fontSize: '2rem', fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1rem' }}>El Salto de tu VIDA</h3>
-              <p style={{ color: 'var(--texto)', fontSize: '1.1rem', marginBottom: '2rem', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
-                "Un proceso de evolución personal para reconocer, activar y sostener una nueva coherencia."
-              </p>
-              
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: 'var(--violeta-deep)', fontWeight: 600, marginBottom: '0.5rem' }}>Para quién:</h4>
-                <p style={{ color: 'var(--texto-light)', fontSize: '0.95rem' }}>Agotamiento o desconexión / querer revisar hábitos y dirección / necesitar claridad interna / sentir que los resultados no expresan quiénes son</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {programasPage.paraPersonas.items.map((item) => (
+              <div key={item.id} className="reveal bg-white border border-gray-100 p-10 rounded-[32px] shadow-sm hover:shadow-xl transition-all flex flex-col">
+                <div className="mb-6">
+                  <span className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-bold uppercase tracking-wider">{item.tag}</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3" style={{ color: 'var(--violeta-deep)' }}>{item.name}</h3>
+                <p className="text-base font-semibold mb-6 italic" style={{ color: 'var(--rosa)' }}>"{item.subtitle}"</p>
+                <p className="text-gray-600 mb-8 flex-grow leading-relaxed">{item.description}</p>
+                <Link to={`/programas/${item.id}`} className="btn-rosa shadow-sm flex items-center justify-center gap-2">
+                  {item.cta} <ArrowRight size={18} />
+                </Link>
               </div>
-
-              <div style={{ marginBottom: '2.5rem', flexGrow: 1 }}>
-                <h4 style={{ color: 'var(--violeta-deep)', fontWeight: 600, marginBottom: '0.5rem' }}>Qué trabaja:</h4>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {["Claridad interna", "Observación de hábitos", "Activación de nuevas respuestas", "Disciplina consciente", "Alineamiento"].map(item => (
-                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--texto-light)', fontSize: '0.95rem' }}>
-                      <CheckCircle size={16} weight="fill" color="var(--rosa)" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Link to="/programas/el-salto-de-tu-vida" className="btn-rosa" style={{ textAlign: 'center', padding: '1rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                Quiero conocer este programa <ArrowRight size={18} weight="bold" />
-              </Link>
-            </div>
-
-            {/* Card 2 */}
-            <div className="reveal triada-card" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', borderTop: '4px solid var(--amarillo)', background: '#F8F9FA' }}>
-              <h3 style={{ fontSize: '2rem', fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1rem' }}>Proceso de Autoevaluación y Activación Interior</h3>
-              <p style={{ color: 'var(--texto)', fontSize: '1.1rem', marginBottom: '2rem', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif" }}>
-                "Un recorrido guiado para mirar con honestidad el presente y empezar a ordenar una nueva dirección."
-              </p>
-              
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: 'var(--violeta-deep)', fontWeight: 600, marginBottom: '0.5rem' }}>Para quién:</h4>
-                <p style={{ color: 'var(--texto-light)', fontSize: '0.95rem' }}>Personas en momento de revisión personal que necesitan estructura para observar, nombrar y activar.</p>
-              </div>
-
-              <div style={{ marginBottom: '2.5rem', flexGrow: 1 }}>
-                <h4 style={{ color: 'var(--violeta-deep)', fontWeight: 600, marginBottom: '0.5rem' }}>Qué trabaja:</h4>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {["Autoobservación", "Claridad", "Activación interior", "Hábitos", "Seguimiento", "Coherencia"].map(item => (
-                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--texto-light)', fontSize: '0.95rem' }}>
-                      <CheckCircle size={16} weight="fill" color="var(--amarillo-dark, #D4A000)" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Link to="/programas/proceso-de-autoevaluacion-y-activacion-interior" className="btn-rosa shadow-hover" style={{ textAlign: 'center', padding: '1rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                Quiero empezar por acá <ArrowRight size={18} weight="bold" />
-              </Link>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Grupales y comunitarios */}
+      {/* Comunitarios */}
       <section className="section section-light">
         <div className="section-inner">
-          <div className="reveal text-center mb-12">
-            <h2 className="section-title">Grupales y comunitarios</h2>
+          <div className="section-intro-centered mb-16">
+            <h2 className="reveal section-title">{programasPage.comunitarios.title}</h2>
+            <p className="reveal section-subtitle centered">
+              Espacios diseñados para grupos, organizaciones sociales y contextos donde la transformación requiere escucha, <br className="desktop-only" />
+              cuidado y capacidad de adaptación a realidades complejas.
+            </p>
           </div>
           
-          <div className="reveal" style={{ background: 'white', padding: '3.5rem', borderRadius: '16px', borderTop: '4px solid var(--azul)', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', maxWidth: '900px', margin: '0 auto' }}>
-            <h3 style={{ fontSize: '2.2rem', fontFamily: 'Poppins', color: 'var(--violeta-deep)', marginBottom: '1rem', textAlign: 'center' }}>Una Mirada hacia el Interior</h3>
-            <p style={{ color: 'var(--texto)', fontSize: '1.2rem', marginBottom: '2.5rem', fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", textAlign: 'center' }}>
-              "Un programa de desarrollo emocional, conversación y apertura de posibilidades de cambio en contextos de vulnerabilidad."
-            </p>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-              <div>
-                <h4 style={{ color: 'var(--violeta-deep)', fontWeight: 600, marginBottom: '0.5rem' }}>Para quién:</h4>
-                <p style={{ color: 'var(--texto-light)', fontSize: '1rem', lineHeight: 1.6 }}>Organizaciones sociales / Espacios comunitarios / Dispositivos de acompañamiento / Grupos que requieren trabajo emocional con cuidado.</p>
+          <div className="max-w-5xl mx-auto">
+            {programasPage.comunitarios.items.map((item) => (
+              <div key={item.id} className="reveal bg-white border border-gray-100 p-10 md:p-16 rounded-[32px] shadow-sm hover:shadow-xl transition-all max-w-4xl mx-auto flex flex-col">
+                <div className="mb-6">
+                  <span className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-bold uppercase tracking-wider">{item.tag}</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-4" style={{ color: 'var(--violeta-deep)' }}>{item.name}</h3>
+                <p className="text-lg italic mb-8" style={{ color: 'var(--texto-light)' }}>{item.subtitle}</p>
+                <p className="text-gray-600 leading-relaxed mb-10">{item.description}</p>
+                <Link to="/agenda" className="btn-rosa flex items-center justify-center gap-2 shadow-hover mx-auto" style={{ textDecoration: 'none', padding: '1rem 2rem', borderRadius: '50px', width: 'fit-content' }}>
+                  {item.cta} <ArrowRight size={18} />
+                </Link>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div>
-                <h4 style={{ color: 'var(--violeta-deep)', fontWeight: 600, marginBottom: '0.5rem' }}>Qué trabaja:</h4>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {["Autoconocimiento emocional", "Aceptación y perdón", "Gestión emocional saludable", "Resiliencia", "Bienestar integral"].map(item => (
-                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--texto-light)', fontSize: '0.95rem' }}>
-                      <CheckCircle size={16} weight="fill" color="var(--azul)" /> {item}
-                    </li>
-                  ))}
-                </ul>
+      {/* Para Organizaciones */}
+      <section className="section bg-white">
+        <div className="section-inner">
+          <div className="section-intro-centered mb-16">
+            <h2 className="reveal section-title">{programasPage.paraOrganizaciones.title}</h2>
+            <p className="reveal section-subtitle centered">{programasPage.paraOrganizaciones.intro}</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            {programasPage.paraOrganizaciones.items.map((item, i) => (
+              <div key={i} className="reveal bg-gray-50/50 p-8 rounded-3xl border border-gray-100">
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                    {i === 0 && <Target className="text-violet-600" size={24} />}
+                    {i === 1 && <BookOpen className="text-rosa" size={24} />}
+                    {i === 2 && <Users className="text-amber-600" size={24} />}
+                    {i === 3 && <Building2 className="text-green-600" size={24} />}
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">{item.name}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{item.text}</p>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 bg-gray-200/50 px-2 py-1 rounded">
+                      {item.tag}
+                    </span>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Link to="/organizaciones" className="btn-rosa btn-hero">
+              {programasPage.paraOrganizaciones.cta}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Orientación */}
+      <section className="section bg-amber-50/30">
+        <div className="section-inner">
+          <div className="section-intro-centered mb-12">
+            <h2 className="reveal section-title">{programasPage.ayuda.title}</h2>
+            <p className="reveal section-subtitle centered">{programasPage.ayuda.text}</p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-4 mb-12">
+            {programasPage.ayuda.items.map((item, i) => (
+              <div key={i} className="reveal flex items-center gap-3 p-4 bg-white rounded-2xl border border-amber-100">
+                <CheckCircle className="text-amber-500 shrink-0" size={20} />
+                <span className="font-medium text-amber-900">{item}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+            <Link to="/agenda" className="btn-outline-violeta w-full md:w-auto text-center" style={{ border: '2px solid var(--violeta-soft)', color: 'var(--violeta-soft)', borderRadius: '50px', padding: '0.9rem 2rem', fontWeight: '700', textDecoration: 'none' }}>
+              {programasPage.ayuda.ctas[1]}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Cierre */}
+      <section className="section section-dark text-center">
+        <div className="section-inner">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="reveal section-title text-white mb-10">
+              {programasPage.cierre.title}
+            </h2>
+            <div className="flex flex-col gap-4 mb-16">
+              {programasPage.cierre.text.map((t, i) => (
+                <p key={i} className="reveal text-xl md:text-2xl font-light text-white/90 italic text-center">
+                  {t}
+                </p>
+              ))}
             </div>
-
-            <div style={{ textAlign: 'center' }}>
-              <Link to="/agenda" className="btn-rosa shadow-hover" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2.5rem' }}>
-                Consultar por esta línea <ArrowRight size={18} weight="bold" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Para organizaciones */}
-      <section className="section bg-white" style={{ paddingTop: '6rem', paddingBottom: '6rem', borderBottom: '1px solid #eee' }}>
-        <div className="section-inner text-center">
-          <h2 className="section-title reveal" style={{ fontSize: '2rem' }}>Programas para equipos y organizaciones</h2>
-          <p className="text-xl max-w-4xl mx-auto reveal" style={{ color: 'var(--texto-light)', lineHeight: 1.8, marginTop: '2rem', marginBottom: '3rem' }}>
-            No todas las organizaciones necesitan lo mismo, pero muchas comparten un mismo fondo: desgaste, ruido, baja calidad conversacional, liderazgo tenso o necesidad de recuperar humanidad sin perder dirección.
-          </p>
-          <div className="reveal">
-            <Link to="/organizaciones" className="btn-rosa shadow-hover">
-              Ver propuesta para organizaciones
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* No sé por dónde empezar */}
-      <section className="section bg-[#FDF9F3]">
-        <div className="section-inner text-center">
-          <span className="section-tag section-tag-light reveal mb-4" style={{ display: 'inline-block' }}>Orientación</span>
-          <h2 className="section-title reveal">¿No sabés por dónde empezar?</h2>
-          <p className="text-lg max-w-4xl mx-auto reveal" style={{ color: 'var(--texto-light)', lineHeight: 1.8, marginTop: '2rem', marginBottom: '3rem' }}>
-            No hace falta llegar sabiendo exactamente qué programa necesitás. A veces la mejor puerta de entrada es una conversación para entender en qué momento estás y cuál es el formato más adecuado para empezar.
-          </p>
-          <div className="reveal" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/agenda" className="btn-rosa">
-              Quiero orientación
-            </Link>
-            <Link to="/agenda" className="btn-hero" style={{ background: 'transparent', border: '2px solid var(--rosa)', color: 'var(--rosa)' }}>
-              Agendar una conversación
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="section section-dark" style={{ paddingTop: '8rem', paddingBottom: '8rem', display: 'flex', justifyContent: 'center' }}>
-        <div className="section-inner" style={{ textAlign: 'center', width: '100%' }}>
-          <blockquote className="reveal" style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <p style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: 'white', fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', lineHeight: 1.3, marginBottom: '2rem', textAlign: 'center' }}>
-              "Mirar con más honestidad.<br />Activar una respuesta más consciente.<br />Sostener una coherencia posible."
+            <p className="reveal text-rosa font-black uppercase tracking-[0.2em] text-sm">
+              {programasPage.cierre.footer}
             </p>
-            <footer style={{ fontSize: '1.2rem', color: 'var(--rosa)', fontFamily: 'Lato', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', textAlign: 'center' }}>
-              Ese es el trabajo de fondo que organiza nuestros programas
-            </footer>
-          </blockquote>
+          </div>
         </div>
       </section>
     </main>
-  );
+  )
 }

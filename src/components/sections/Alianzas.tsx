@@ -5,14 +5,15 @@ export function Alianzas() {
   return (
     <section className="section" id="alianzas" style={{ background: '#F0F2F5' }}>
       <div className="section-inner">
-        <div className="triada-intro reveal">
+        <div className="section-intro-centered reveal">
           <span className="section-tag">Institucional</span>
           <h2 className="section-title">Alianzas que impulsan transformaciones</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Fundación Consciencia Humana trabaja junto a organizaciones, empresas e instituciones que buscan promover liderazgo consciente, cultura responsable y transformación sostenible.
+          <p className="section-subtitle centered">
+            Fundación Consciencia Humana trabaja junto a organizaciones, empresas e instituciones <br className="desktop-only" />
+            que buscan promover liderazgo consciente, cultura responsable y transformación sostenible.
           </p>
           <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/agenda" className="btn-rosa shadow-hover" style={{ display: 'inline-block', padding: '1rem 2rem', borderRadius: 50 }}>
+            <Link to="/agenda" className="btn-rosa shadow-hover">
               Solicitar reunión institucional
             </Link>
           </div>
