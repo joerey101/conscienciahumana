@@ -985,12 +985,8 @@ p { margin-bottom: 1rem; }
   .navbar-logo span { font-size: 0.8rem; line-height: 1.1; }
   .fch-logo-animated { width: 32px !important; height: 32px !important; }
   
-  .navbar-actions { 
-    order: 2; 
-    flex-shrink: 0;
-    margin-left: auto;
-    margin-right: 0.5rem;
-    max-width: fit-content;
+  .navbar-actions {
+    display: none;
   }
   
   
