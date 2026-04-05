@@ -66,7 +66,7 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link to="/agenda" className="btn-rosa" onClick={close} style={{ marginTop: '2rem', display: 'block', textAlign: 'center' }}>
+          <Link to="/agenda" className="btn-rosa btn-sm" onClick={close} style={{ marginTop: '2rem', display: 'block', textAlign: 'center' }}>
             Agendar conversación
           </Link>
         </div>
