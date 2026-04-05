@@ -32,7 +32,7 @@ export function Conversacion() {
               className="triada-card reveal"
               style={{ '--i': card.delay, borderTop: `4px solid ${card.borderColor}` } as React.CSSProperties}
             >
-              <div className="triada-icon" style={card.style}>
+              <div className="triada-icon desktop-only" style={card.style}>
                 {iconMap[card.icon]}
               </div>
               <h3>{card.title}</h3>

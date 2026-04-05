@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { Users, CheckCircle, MessageSquare, Sparkles } from 'lucide-react'
 import { nosotrosPage } from '../data/site'
 import StackedCards from '../components/StackedCards'
 
@@ -46,17 +45,20 @@ export function Nosotros() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {nosotrosPage.creencias.items.map((item, i) => (
-              <div key={i} className="reveal bg-gray-50 p-8 rounded-[32px] border border-gray-100 flex flex-col items-center text-center">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6">
-                  {i === 0 && <CheckCircle className="text-violet-600" size={24} />}
-                  {i === 1 && <MessageSquare className="text-rosa" size={24} />}
-                  {i === 2 && <Users className="text-amber-600" size={24} />}
-                  {i === 3 && <Sparkles className="text-green-600" size={24} />}
+            {nosotrosPage.creencias.items.map((item, i) => {
+              const colors = [
+                { border: '#7C3AED', bg: '#F5F3FF', text: '#4C1D95' },
+                { border: '#E91E63', bg: '#FFF0F6', text: '#9D174D' },
+                { border: '#D97706', bg: '#FFFBEB', text: '#92400E' },
+                { border: '#16A34A', bg: '#F0FDF4', text: '#14532D' },
+              ]
+              const c = colors[i]
+              return (
+                <div key={i} className="reveal rounded-[32px]" style={{ background: c.bg, borderTop: `4px solid ${c.border}`, padding: '2rem' }}>
+                  <span className="font-bold leading-tight" style={{ color: c.text }}>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
                 </div>
-                <span className="font-bold text-gray-800 leading-tight">{item}</span>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

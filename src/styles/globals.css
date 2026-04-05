@@ -248,6 +248,10 @@ p { margin-bottom: 1rem; }
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(253, 203, 110, 0.4);
 }
+.btn-sm {
+  padding: 0.5rem 0.9rem !important;
+  font-size: 0.82rem !important;
+}
 .btn-outline-white {
   display: inline-block;
   border: 2px solid rgba(255,255,255,0.6);
@@ -618,7 +622,7 @@ p { margin-bottom: 1rem; }
    NAVBAR
    ═══════════════════════════════════ */
 .navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 5000;
   padding: 1.5rem 2rem;
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   background: rgba(255, 255, 255, 0.85);
@@ -631,13 +635,20 @@ p { margin-bottom: 1rem; }
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
 }
 .navbar-inner {
-  max-width: 1280px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
 }
 .navbar-logo {
   display: flex; align-items: center; gap: 0.6rem;
   text-decoration: none; color: var(--texto);
-  margin-right: 4rem; /* Separación de INICIO */
+  margin-right: 4rem;
+  flex-shrink: 0;
+  max-width: fit-content;
 }
 .navbar-logo span {
   font-family: 'Poppins', sans-serif;
@@ -684,7 +695,7 @@ p { margin-bottom: 1rem; }
 .bitacora-modal-overlay {
   display: none;
   position: fixed; inset: 0;
-  z-index: 3000;
+  z-index: 6000;
   background: rgba(20,10,50,0.5);
   backdrop-filter: blur(8px);
   overflow-y: auto;
@@ -902,14 +913,25 @@ p { margin-bottom: 1rem; }
 
 @media (max-width: 640px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "brand brand"
+      "nav1  nav2"
+      "contact contact";
+    gap: 2.5rem 2rem;
   }
+  .footer-brand      { grid-area: brand; }
+  .footer-nav-sitio  { grid-area: nav1; }
+  .footer-nav-programas { grid-area: nav2; }
+  .footer-contact-col { grid-area: contact; }
   .footer-v2 {
     padding: 4rem 1.5rem 2rem;
   }
   .footer-logo-text {
     font-size: 1.3rem;
+  }
+  .footer-ul li {
+    font-size: 0.85rem;
   }
 }
 
@@ -921,7 +943,7 @@ p { margin-bottom: 1rem; }
   .section-hero { padding-top: 8rem; padding-bottom: 4rem; }
   .triada-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .triada-card { padding: 1.5rem; }
-  .triada-card .triada-icon { display: flex; transform: scale(0.85); margin-bottom: 0.8rem; }
+  .triada-card .triada-icon { display: none !important; }
   .platform-grid { grid-template-columns: 1fr; gap: 3rem; }
   .platform-img { order: -1; max-height: 450px; }
   .audience-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -938,7 +960,40 @@ p { margin-bottom: 1rem; }
   .bitacora-grid { grid-template-columns: 1fr; }
   .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
   .navbar-links { display: none; }
-  .mobile-toggle { display: block; }
+  .mobile-toggle { display: block; order: 3; flex-shrink: 0; }
+  .mobile-hidden-text { display: none; }
+  
+  .navbar { padding: 0.8rem 1rem; }
+  
+  .navbar-inner { 
+    display: flex !important; 
+    width: 100% !important; 
+    align-items: center !important; 
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+  
+  .navbar-logo { 
+    order: 1;
+    flex: 0 0 auto;
+    min-width: 0;
+    max-width: 55%;
+    gap: 0.4rem;
+    margin-right: 0;
+    overflow: hidden;
+  }
+  .navbar-logo span { font-size: 0.8rem; line-height: 1.1; }
+  .fch-logo-animated { width: 32px !important; height: 32px !important; }
+  
+  .navbar-actions { 
+    order: 2; 
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    max-width: fit-content;
+  }
+  
+  
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero-content { padding: 2rem 1rem; }
   /* Full width fix for Transformation Section */
@@ -948,7 +1003,7 @@ p { margin-bottom: 1rem; }
   #transformacion .platform-img img { border-radius: 0 !important; width: 100% !important; box-shadow: none !important; }
   #transformacion .reveal:last-child { padding: 0 1.5rem !important; }
   #transformacion h2.section-title { padding: 0 1.5rem !important; }
-  .desktop-only { display: none; }
+  .desktop-only { display: none !important; }
 }
 
 @media (max-width: 480px) {
@@ -1064,6 +1119,8 @@ p { margin-bottom: 1rem; }
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
 .flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
 .items-center { align-items: center; }
 .items-start { align-items: flex-start; }
 .justify-center { justify-content: center; }

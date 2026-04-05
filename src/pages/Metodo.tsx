@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { Eye, Zap, Anchor, CheckCircle, Users, ArrowRight } from 'lucide-react'
+import { Eye, Zap, Anchor, CheckCircle } from 'lucide-react'
 import { VisualProgress } from '../components/premium/VisualProgress'
 import { metodoPage } from '../data/site'
 
@@ -99,7 +99,7 @@ export function Metodo() {
               </ul>
             </div>
             <div className="reveal bg-violet-50 p-10 rounded-[40px] border border-violet-100">
-              <p className="italic text-lg text-violet-800 leading-relaxed">
+              <p className="italic font-bold text-lg text-violet-800 leading-relaxed">
                 "{metodoPage.comoTrabajamos.párrafoAdicional}"
               </p>
             </div>
@@ -116,10 +116,7 @@ export function Metodo() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {metodoPage.paraQuien.items.map((item, i) => (
-              <div key={i} className="reveal bg-white p-6 rounded-2xl flex items-center gap-4 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
-                  <Users className="text-violet-600" size={20} />
-                </div>
+              <div key={i} className="reveal bg-white p-6 rounded-2xl flex items-center gap-4 shadow-sm border border-violet-50">
                 <span className="font-medium text-gray-800">{item}</span>
               </div>
             ))}
@@ -133,7 +130,7 @@ export function Metodo() {
           <div className="grid md:grid-cols-2 gap-16">
             <div className="reveal order-2 md:order-1">
               <div className="bg-amber-50 p-10 rounded-[40px] border border-amber-100">
-                <p className="text-lg text-amber-900 leading-relaxed">
+                <p className="italic font-bold text-lg text-amber-900 leading-relaxed">
                   {metodoPage.habilitar.párrafoAdicional}
                 </p>
               </div>
@@ -166,7 +163,6 @@ export function Metodo() {
           <div className="reveal">
             <Link to="/agenda" className="btn-rosa btn-hero">
               {metodoPage.cierre.cta}
-              <ArrowRight className="inline-block ml-2" size={20} />
             </Link>
           </div>
         </div>

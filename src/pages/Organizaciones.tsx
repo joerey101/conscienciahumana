@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { Users, Target, Activity, Handshake, ShieldCheck, MessageSquare, Briefcase, ArrowRight, CheckCircle } from 'lucide-react'
+import { Users, Target, Activity, ShieldCheck, MessageSquare, ArrowRight } from 'lucide-react'
 import { organizacionesPage } from '../data/site'
 
 export function Organizaciones() {
@@ -29,7 +29,6 @@ export function Organizaciones() {
             <div className="reveal mt-12">
               <Link to="/agenda" className="btn-rosa btn-hero">
                 {organizacionesPage.hero.cta}
-                <ArrowRight className="inline-block ml-2" size={20} />
               </Link>
             </div>
           </div>
@@ -59,11 +58,8 @@ export function Organizaciones() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {organizacionesPage.situaciones.items.map((item, i) => (
-              <div key={i} className="reveal bg-white p-6 rounded-2xl flex items-center gap-4 border border-black/5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center shrink-0">
-                  <Activity className="text-rosa" size={24} />
-                </div>
-                <span className="font-medium text-gray-800 leading-tight">{item}</span>
+              <div key={i} className="reveal bg-white p-6 rounded-2xl border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+                <span className="font-bold text-gray-800 leading-tight">{item.charAt(0).toUpperCase() + item.slice(1)}</span>
               </div>
             ))}
           </div>
@@ -78,25 +74,28 @@ export function Organizaciones() {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8">
-            {organizacionesPage.trabajo.items.map((item, i) => (
-              <div key={i} className={`reveal p-10 rounded-[40px] border flex flex-col ${i === 4 ? 'lg:col-span-2 bg-blue-50 border-blue-100' : 'bg-gray-50 border-gray-100'}`}>
-                <div className="flex gap-6 items-start mb-6">
-                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                    {i === 0 && <Target className="text-violet-600" size={28} />}
-                    {i === 1 && <Activity className="text-rosa" size={28} />}
-                    {i === 2 && <MessageSquare className="text-amber-600" size={28} />}
-                    {i === 3 && <ShieldCheck className="text-green-600" size={28} />}
-                    {i === 4 && <Users className="text-blue-600" size={28} />}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ color: 'var(--violeta-deep)' }}>{item.name}</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      {item.text}
-                    </p>
+            {organizacionesPage.trabajo.items.map((item, i) => {
+              const borderColors = ['#7C3AED', '#E91E63', '#D97706', '#16A34A', '#2563EB']
+              return (
+                <div key={i} className={`reveal p-10 rounded-[40px] border flex flex-col ${i === 4 ? 'lg:col-span-2 bg-blue-50 border-blue-100' : 'bg-gray-50 border-gray-100'}`} style={{ borderTop: `4px solid ${borderColors[i]}` }}>
+                  <div className="flex gap-6 items-start mb-6">
+                    <div className="hidden md:flex w-14 h-14 bg-white rounded-2xl items-center justify-center shadow-sm shrink-0">
+                      {i === 0 && <Target className="text-violet-600" size={28} />}
+                      {i === 1 && <Activity className="text-rosa" size={28} />}
+                      {i === 2 && <MessageSquare className="text-amber-600" size={28} />}
+                      {i === 3 && <ShieldCheck className="text-green-600" size={28} />}
+                      {i === 4 && <Users className="text-blue-600" size={28} />}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-3" style={{ color: 'var(--violeta-deep)' }}>{item.name}</h3>
+                      <p className="text-lg text-gray-600 leading-relaxed">
+                        {item.text}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -104,8 +103,7 @@ export function Organizaciones() {
       {/* Metodología */}
       <section className="section bg-violet-900 text-white">
         <div className="section-inner">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="reveal">
+          <div className="reveal max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
                 {organizacionesPage.metodologia.title}
               </h2>
@@ -114,16 +112,6 @@ export function Organizaciones() {
                 {organizacionesPage.metodologia.text}
               </p>
             </div>
-            <div className="reveal flex justify-center">
-              <div className="relative">
-                <div className="w-64 h-64 border-4 border-white/20 rounded-full animate-pulse flex items-center justify-center">
-                  <Handshake size={80} className="text-white/40" />
-                </div>
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-rosa rounded-full"></div>
-                <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-amarillo rounded-full"></div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -138,8 +126,7 @@ export function Organizaciones() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {organizacionesPage.diferencial.items.map((item, i) => (
               <div key={i} className="reveal p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl transition-all">
-                <CheckCircle className="text-green-500 mx-auto mb-6" size={32} />
-                <span className="text-lg font-bold text-gray-800 leading-tight block">{item}</span>
+                <span className="text-lg font-bold text-gray-800 leading-tight block">{item.charAt(0).toUpperCase() + item.slice(1)}</span>
               </div>
             ))}
           </div>
@@ -161,13 +148,25 @@ export function Organizaciones() {
               </p>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              {organizacionesPage.formatos.items.map((item, i) => (
-                <div key={i} className="reveal px-6 py-3 bg-gray-100 text-gray-800 rounded-full font-bold text-sm tracking-wide flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-violet-600"></div>
-                  {item.toUpperCase()}
-                </div>
-              ))}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '4rem' }}>
+              {(() => {
+                const colors = [
+                  { border: '#7C3AED', bg: '#F5F3FF', text: '#4C1D95' },
+                  { border: '#E91E63', bg: '#FFF0F6', text: '#9D174D' },
+                  { border: '#D97706', bg: '#FFFBEB', text: '#92400E' },
+                  { border: '#16A34A', bg: '#F0FDF4', text: '#14532D' },
+                  { border: '#2563EB', bg: '#EFF6FF', text: '#1E3A8A' },
+                  { border: '#0891B2', bg: '#ECFEFF', text: '#164E63' },
+                ]
+                return organizacionesPage.formatos.items.map((item, i) => {
+                  const c = colors[i % colors.length]
+                  return (
+                    <div key={i} className="reveal rounded-2xl" style={{ background: c.bg, borderLeft: `4px solid ${c.border}`, padding: '1.5rem 2rem' }}>
+                      <span className="font-bold text-base" style={{ color: c.text }}>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
+                    </div>
+                  )
+                })
+              })()}
             </div>
             
             <p className="reveal text-center text-gray-500 italic max-w-2xl mx-auto">
@@ -184,11 +183,7 @@ export function Organizaciones() {
             <h2 className="reveal section-title mb-4">{organizacionesPage.cta.title}</h2>
             <p className="reveal section-subtitle centered">{organizacionesPage.cta.text}</p>
           </div>
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center reveal">
-            <Link to="/agenda" className="btn-rosa btn-hero w-full md:w-auto">
-              {organizacionesPage.cta.ctas[0]}
-              <Briefcase className="inline-block ml-2" size={20} />
-            </Link>
+          <div className="flex justify-center reveal">
             <Link to="/programas" className="btn-outline-violeta w-full md:w-auto" style={{ border: '2px solid var(--violeta-soft)', color: 'var(--violeta-soft)', borderRadius: '50px', padding: '1.2rem 2.5rem', fontWeight: '700', textDecoration: 'none', fontSize: '1.1rem' }}>
               {organizacionesPage.cta.ctas[1]}
             </Link>

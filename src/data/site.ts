@@ -40,32 +40,32 @@ export const metodoPage = {
       title: "Reconocer",
       subtitle: "Ver con más honestidad lo que hoy es",
       text: "El primer paso no es cambiar rápido. Es reconocer. Reconocer la incomodidad. Reconocer el desgaste. Reconocer los hábitos que ya no sostienen. Reconocer la distancia entre los resultados actuales y la vida que se quiere habitar. Este momento implica ampliar la perspectiva, poner en crisis viejos paradigmas, nombrar limitaciones y tomar conciencia del estado actual. Así aparece en el desarrollo metodológico de El Salto de tu VIDA.",
-      items: ["registro interno", "patrones repetidos", "desgaste emocional", "hábitos", "ruido y dispersión", "lectura de resultados", "zonas de desconexión"]
+      items: ["Registro interno", "Patrones repetidos", "Desgaste emocional", "Hábitos", "Ruido y dispersión", "Lectura de resultados", "Zonas de desconexión"]
     },
     {
       id: "activar",
       title: "Activar",
       subtitle: "Responder distinto también es una práctica",
       text: "Una vez que algo se ve, aparece la posibilidad de responder de otra manera. Activar es dejar de quedar atrapado solo en el diagnóstico. Es ordenar prioridades. Es nombrar una dirección. Es empezar a construir una respuesta más consciente, más alineada y más concreta. En el material base, esta etapa se asocia con visualizar el yo buscado, reconocer la matriz de generación de resultados, redescubrir la capacidad de responder a las circunstancias y trabajar nuevos hábitos como portal de cambio.",
-      items: ["foco y dirección", "capacidad de decisión", "hábitos y disciplina consciente", "lenguaje y declaración", "acción alineada", "compromiso con el proceso"]
+      items: ["Foco y dirección", "Capacidad de decisión", "Hábitos y disciplina consciente", "Lenguaje y declaración", "Acción alineada", "Compromiso con el proceso"]
     },
     {
       id: "sostener",
       title: "Sostener",
       subtitle: "La transformación se vuelve real cuando encuentra forma de permanecer",
       text: "No alcanza con tener un momento de claridad. Hace falta sostenerlo. Sostener es construir una nueva coherencia: una forma más consciente de estar, decidir, comunicar y actuar. Es también poder volver al centro cuando aparecen la dispersión, el cansancio o la desconexión. En El Salto de tu VIDA, esta etapa se vincula con prácticas que ayudan a recuperar alineamiento, revisar la causa raíz de la limitación, fortalecer comunicación asertiva y sostener la nueva coherencia en el tiempo.",
-      items: ["coherencia cotidiana", "seguimiento", "prácticas de recentrado", "comunicación", "revisión de desvíos", "capacidad de sostener sin rigidez"]
+      items: ["Coherencia cotidiana", "Seguimiento", "Prácticas de recentrado", "Comunicación", "Revisión de desvíos", "Capacidad de sostener sin rigidez"]
     }
   ],
   comoTrabajamos: {
     title: "Cómo se vive este proceso",
     intro: "Nuestra forma de acompañar combina:",
     items: [
-      "espacios conversatorios guiados",
-      "escucha atenta y sin juicio",
-      "ejercicios simples y aplicables",
-      "reflexión individual y grupal",
-      "herramientas para trasladar lo trabajado a la vida diaria"
+      "Espacios conversatorios guiados",
+      "Escucha atenta y sin juicio",
+      "Ejercicios simples y aplicables",
+      "Reflexión individual y grupal",
+      "Herramientas para trasladar lo trabajado a la vida diaria"
     ],
     párrafoAdicional: "En Una Mirada hacia el Interior, esta lógica se expresó en encuentros en círculo, priorizando la palabra, la escucha mutua, el respeto y propuestas prácticas en un tono cercano y liviano, que permitió abordar temas profundos de manera cuidada."
   },
@@ -73,23 +73,23 @@ export const metodoPage = {
     title: "Para quién aplica este método",
     intro: "Este proceso puede tomar distintas formas según el contexto, pero suele ser especialmente valioso para:",
     items: [
-      "personas que necesitan claridad, dirección o reordenamiento",
-      "equipos con desgaste, baja cohesión o necesidad de conversación real",
-      "líderes que quieren revisar su forma de estar y conducir",
-      "organizaciones que buscan integrar bienestar, humanidad y resultados",
-      "espacios comunitarios que requieren cuidado, escucha y metodología adaptable"
+      "Personas que necesitan claridad, dirección o reordenamiento",
+      "Equipos con desgaste, baja cohesión o necesidad de conversación real",
+      "Líderes que quieren revisar su forma de estar y conducir",
+      "Organizaciones que buscan integrar bienestar, humanidad y resultados",
+      "Espacios comunitarios que requieren cuidado, escucha y metodología adaptable"
     ]
   },
   habilitar: {
     title: "Qué puede habilitar",
     intro: "No prometemos fórmulas mágicas. Sí creemos en procesos que pueden abrir:",
     items: [
-      "mayor claridad",
-      "mejor registro de uno mismo",
-      "más coherencia entre intención y acción",
-      "hábitos más alineados",
-      "vínculos más honestos",
-      "mejor capacidad de pedir ayuda, sostener dirección y cuidar el propio bienestar"
+      "Mayor claridad",
+      "Mejor registro de uno mismo",
+      "Más coherencia entre intención y acción",
+      "Hábitos más alineados",
+      "Vínculos más honestos",
+      "Mejor capacidad de pedir ayuda, sostener dirección y cuidar el propio bienestar"
     ],
     párrafoAdicional: "En el informe de ejecución de Una Mirada hacia el Interior, entre los logros cualitativos observados se mencionan mayor habilitación de la palabra en torno a emociones, miedos y deseos; inicio de procesos de reflexión sobre historia, vínculos y patrones de conducta; y mayor registro de la necesidad de pedir ayuda y cuidar el bienestar emocional."
   },

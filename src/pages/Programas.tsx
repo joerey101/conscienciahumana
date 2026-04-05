@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { ArrowRight, CheckCircle, Target, Users, BookOpen, Building2 } from 'lucide-react'
+import { CheckCircle, Target, Users, BookOpen, Building2 } from 'lucide-react'
 import { programasPage } from '../data/site'
 
 export function Programas() {
@@ -55,31 +55,27 @@ export function Programas() {
       {/* Programa Marco */}
       <section className="section bg-violet-50/50">
         <div className="section-inner">
-          <div className="reveal bg-white p-12 md:p-16 rounded-[40px] border border-violet-100 shadow-sm max-w-5xl mx-auto">
-            <div className="flex flex-col gap-12">
-              <div>
-                <span className="section-tag">Marco Rector</span>
-                <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--violeta-deep)' }}>{programasPage.programaMarco.title}</h2>
-                <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                  {programasPage.programaMarco.text}
-                </p>
-                <div className="flex flex-wrap items-center gap-4">
-                  {programasPage.programaMarco.subestructura.map(item => (
-                    <span key={item} className="px-6 py-3 bg-violet-50 text-violet-700 rounded-full font-bold text-base border border-violet-100 shadow-sm">
-                      {item}
-                    </span>
-                  ))}
-                  <Link to="/metodo" className="btn-rosa shadow-hover" style={{ textDecoration: 'none', borderRadius: '50px', padding: '0.75rem 1.5rem', display: 'inline-flex', alignItems: 'center' }}>
-                    {programasPage.programaMarco.cta}
-                  </Link>
-                </div>
-              </div>
-              <div className="w-full bg-violet-50/50 p-10 rounded-[32px] border border-violet-100/50">
-                <p className="text-xl md:text-2xl text-violet-900 leading-relaxed italic text-center font-medium">
-                  "{programasPage.programaMarco.footer}"
-                </p>
-              </div>
+          <div className="reveal text-center max-w-3xl mx-auto">
+            <span className="section-tag">Marco Rector</span>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--violeta-deep)' }}>{programasPage.programaMarco.title}</h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              {programasPage.programaMarco.text}
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', width: '100%' }}>
+              {programasPage.programaMarco.subestructura.map(item => (
+                <span key={item} style={{ flex: 1, textAlign: 'center', padding: '0.6rem 0', background: '#EDE9FE', color: '#4C1D95', borderRadius: '12px', fontWeight: 700, fontSize: '0.95rem', border: '1px solid #DDD6FE' }}>
+                  {item}
+                </span>
+              ))}
             </div>
+            <Link to="/metodo" className="btn-rosa shadow-hover" style={{ textDecoration: 'none', borderRadius: '50px', padding: '1rem 0', display: 'block', textAlign: 'center', width: '70%', margin: '0 auto' }}>
+              {programasPage.programaMarco.cta}
+            </Link>
+          </div>
+          <div className="reveal w-full bg-violet-50/50 p-10 rounded-[32px] border border-violet-100/50 max-w-3xl mx-auto mt-12">
+            <p className="text-xl md:text-2xl text-violet-900 leading-relaxed italic text-center font-medium">
+              "{programasPage.programaMarco.footer}"
+            </p>
           </div>
         </div>
       </section>
@@ -104,8 +100,8 @@ export function Programas() {
                 <h3 className="text-2xl font-bold mb-3" style={{ color: 'var(--violeta-deep)' }}>{item.name}</h3>
                 <p className="text-base font-semibold mb-6 italic" style={{ color: 'var(--rosa)' }}>"{item.subtitle}"</p>
                 <p className="text-gray-600 mb-8 flex-grow leading-relaxed">{item.description}</p>
-                <Link to={`/programas/${item.id}`} className="btn-rosa shadow-sm flex items-center justify-center gap-2">
-                  {item.cta} <ArrowRight size={18} />
+                <Link to={`/programas/${item.id}`} className="btn-rosa shadow-sm flex items-center justify-center">
+                  {item.cta}
                 </Link>
               </div>
             ))}
@@ -133,8 +129,8 @@ export function Programas() {
                 <h3 className="text-3xl font-bold mb-4" style={{ color: 'var(--violeta-deep)' }}>{item.name}</h3>
                 <p className="text-lg italic mb-8" style={{ color: 'var(--texto-light)' }}>{item.subtitle}</p>
                 <p className="text-gray-600 leading-relaxed mb-10">{item.description}</p>
-                <Link to="/agenda" className="btn-rosa flex items-center justify-center gap-2 shadow-hover mx-auto" style={{ textDecoration: 'none', padding: '1rem 2rem', borderRadius: '50px', width: 'fit-content' }}>
-                  {item.cta} <ArrowRight size={18} />
+                <Link to="/agenda" className="btn-rosa flex items-center justify-center shadow-hover mx-auto" style={{ textDecoration: 'none', padding: '1rem 2rem', borderRadius: '50px', width: 'fit-content' }}>
+                  {item.cta}
                 </Link>
               </div>
             ))}
@@ -154,18 +150,18 @@ export function Programas() {
             {programasPage.paraOrganizaciones.items.map((item, i) => (
               <div key={i} className="reveal bg-gray-50/50 p-8 rounded-3xl border border-gray-100">
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                  <div className="hidden md:flex w-12 h-12 bg-white rounded-2xl items-center justify-center shadow-sm shrink-0">
                     {i === 0 && <Target className="text-violet-600" size={24} />}
                     {i === 1 && <BookOpen className="text-rosa" size={24} />}
                     {i === 2 && <Users className="text-amber-600" size={24} />}
                     {i === 3 && <Building2 className="text-green-600" size={24} />}
                   </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">{item.name}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{item.text}</p>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 bg-gray-200/50 px-2 py-1 rounded">
+                  <div className="pl-1 md:pl-0">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 bg-gray-200/50 px-2 py-1 rounded inline-block mb-3">
                       {item.tag}
                     </span>
+                    <h4 className="text-xl font-bold mb-2">{item.name}</h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
                   </div>
                 </div>
               </div>

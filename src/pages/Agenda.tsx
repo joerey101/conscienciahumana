@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { UserCircle, Building2, Handshake, CheckCircle, ArrowRight, MessageSquare, Phone, Mail, AlertCircle, Loader2 } from 'lucide-react'
+import { CheckCircle, ArrowRight, MessageSquare, Phone, Mail, AlertCircle, Loader2 } from 'lucide-react'
 import { agendaPage, siteConfig } from '../data/site'
 
 export function Agenda() {
@@ -98,29 +98,29 @@ export function Agenda() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {agendaPage.opciones.items.map((item, i) => (
-              <div 
-                key={i}
-                onClick={() => handleCardClick(item.value)} 
-                className={`reveal p-10 rounded-[40px] border-2 cursor-pointer transition-all hover:shadow-xl group ${selectedType === item.value ? 'bg-violet-50 border-violet-600 shadow-md' : 'bg-white border-gray-100'}`}
-              >
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-colors ${selectedType === item.value ? 'bg-violet-600 text-white' : 'bg-gray-50 text-gray-400 group-hover:bg-violet-100 group-hover:text-violet-600'}`}>
-                  {i === 0 && <UserCircle size={32} />}
-                  {i === 1 && <Building2 size={32} />}
-                  {i === 2 && <Handshake size={32} />}
+            {agendaPage.opciones.items.map((item, i) => {
+              const borderColors = ['#7C3AED', '#E91E63', '#D97706']
+              const c = borderColors[i]
+              return (
+                <div
+                  key={i}
+                  onClick={() => handleCardClick(item.value)}
+                  className={`reveal p-10 rounded-[40px] border cursor-pointer transition-all hover:shadow-xl ${selectedType === item.value ? 'bg-violet-50 border-violet-300 shadow-md' : 'bg-white border-gray-100'}`}
+                  style={{ borderTop: `4px solid ${c}` }}
+                >
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--violeta-deep)' }}>{item.title}</h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">{item.text}</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--violeta-deep)' }}>{item.title}</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Formulario */}
       <section id="formulario-contacto" className="section section-light relative overflow-hidden">
-        <div className="section-inner max-w-[1200px] mx-auto">
-          <div className="reveal bg-white p-8 md:p-16 rounded-[48px] shadow-sm border border-black/5 relative z-10">
+        <div className="section-inner max-w-[800px] mx-auto">
+          <div className="reveal relative z-10">
             
             {status === 'success' ? (
               <div className="text-center py-12">
@@ -143,13 +143,13 @@ export function Agenda() {
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-5">
-                  <label htmlFor="selectedType" className="block text-sm font-black uppercase tracking-widest text-gray-400">Tipo de consulta *</label>
+                  <label htmlFor="selectedType" className="block text-sm font-black uppercase tracking-widest text-gray-500">Tipo de consulta *</label>
                   <select 
                     id="selectedType"
                     required
                     value={selectedType}
                     onChange={(e) => setSelectedType(e.target.value)}
-                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-violet-300 focus:ring-0 outline-none text-gray-800 transition-all"
+                    className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:border-violet-400 focus:ring-0 outline-none text-gray-800 transition-all shadow-sm"
                   >
                     <option value="" disabled>Seleccioná una opción...</option>
                     {agendaPage.opciones.items.map(opt => (
@@ -158,49 +158,57 @@ export function Agenda() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-5">
-                  <label htmlFor="nombre" className="block text-sm font-black uppercase tracking-widest text-gray-400">Nombre completo *</label>
-                  <input type="text" id="nombre" name="nombre" required value={formData.nombre} onChange={handleInputChange} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-violet-300 focus:ring-0 outline-none text-gray-800 transition-all" />
+                  <label htmlFor="nombre" className="block text-sm font-black uppercase tracking-widest text-gray-500">Nombre completo *</label>
+                  <input type="text" id="nombre" name="nombre" required value={formData.nombre} onChange={handleInputChange} className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:border-violet-400 focus:ring-0 outline-none text-gray-800 transition-all shadow-sm" />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-5">
-                  <label htmlFor="email" className="block text-sm font-black uppercase tracking-widest text-gray-400">Email de contacto *</label>
-                  <input type="email" id="email" name="email" required value={formData.email} onChange={handleInputChange} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-violet-300 focus:ring-0 outline-none text-gray-800 transition-all" />
+                  <label htmlFor="email" className="block text-sm font-black uppercase tracking-widest text-gray-500">Email de contacto *</label>
+                  <input type="email" id="email" name="email" required value={formData.email} onChange={handleInputChange} className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:border-violet-400 focus:ring-0 outline-none text-gray-800 transition-all shadow-sm" />
                 </div>
                 <div className="flex flex-col gap-5">
-                  <label htmlFor="telefono" className="block text-sm font-black uppercase tracking-widest text-gray-400">WhatsApp / Teléfono</label>
-                  <input type="text" id="telefono" name="telefono" value={formData.telefono} onChange={handleInputChange} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-violet-300 focus:ring-0 outline-none text-gray-800 transition-all" placeholder="Opcional" />
+                  <label htmlFor="telefono" className="block text-sm font-black uppercase tracking-widest text-gray-500">WhatsApp / Teléfono</label>
+                  <input type="text" id="telefono" name="telefono" value={formData.telefono} onChange={handleInputChange} className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:border-violet-400 focus:ring-0 outline-none text-gray-800 transition-all shadow-sm" placeholder="Opcional" />
                 </div>
               </div>
 
               <div className="flex flex-col gap-5">
-                <label htmlFor="motivo_general" className="block text-sm font-black uppercase tracking-widest text-gray-400">¿Qué te gustaría trabajar? *</label>
-                <textarea id="motivo_general" name="motivo_general" required value={formData.motivo_general} onChange={handleInputChange} rows={3} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-violet-300 focus:ring-0 outline-none text-gray-800 transition-all resize-none"></textarea>
+                <label htmlFor="motivo_general" className="block text-sm font-black uppercase tracking-widest text-gray-500">¿Qué te gustaría trabajar? *</label>
+                <textarea id="motivo_general" name="motivo_general" required value={formData.motivo_general} onChange={handleInputChange} rows={3} className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:border-violet-400 focus:ring-0 outline-none text-gray-800 transition-all shadow-sm resize-none"></textarea>
               </div>
 
               <div className="flex flex-col gap-5">
-                <label className="block text-sm font-black uppercase tracking-widest text-gray-400">Preferencia de contacto</label>
-                <div className="flex flex-wrap gap-6">
+                <label className="block text-sm font-black uppercase tracking-widest text-gray-500">Preferencia de contacto</label>
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
                   {[
-                    { val: 'mail', icon: <Mail size={18} /> },
-                    { val: 'whatsapp', icon: <MessageSquare size={18} /> },
-                    { val: 'llamada', icon: <Phone size={18} /> }
+                    { val: 'mail', label: 'Mail', icon: <Mail size={18} /> },
+                    { val: 'whatsapp', label: 'WhatsApp', icon: <MessageSquare size={18} /> },
+                    { val: 'llamada', label: 'Llamada', icon: <Phone size={18} /> }
                   ].map((modo) => {
                     const isActive = formData.contacto_preferencia === modo.val;
                     return (
-                    <label 
-                      key={modo.val} 
-                      className="flex items-center gap-3 px-6 py-3 rounded-full cursor-pointer transition-all border"
+                    <label
+                      key={modo.val}
                       style={{
+                        flex: 1,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        padding: '0.9rem 0.5rem',
+                        borderRadius: '16px',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
                         backgroundColor: isActive ? '#534AB7' : '#ffffff',
-                        borderColor: isActive ? '#534AB7' : '#f3f4f6',
-                        color: isActive ? '#ffffff' : '#4b5563',
+                        border: `2px solid ${isActive ? '#534AB7' : '#e5e7eb'}`,
+                        color: isActive ? '#ffffff' : '#6b7280',
                       }}
                     >
                       <input type="radio" name="contacto_preferencia" value={modo.val} checked={isActive} onChange={handleInputChange} className="hidden" />
                       {modo.icon}
-                      <span className="font-bold text-sm uppercase tracking-wide">{modo.val}</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{modo.label}</span>
                     </label>
                     );
                   })}
@@ -231,7 +239,6 @@ export function Agenda() {
                   ) : (
                     <>
                       {agendaPage.formulario.cta}
-                      <ArrowRight className="group-hover:translate-x-2 transition-transform" size={24} />
                     </>
                   )}
                 </button>
@@ -262,7 +269,6 @@ export function Agenda() {
           <div className="reveal">
             <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" className="btn-rosa btn-hero">
               {agendaPage.alternativa.cta}
-              <ArrowRight className="inline-block ml-2" size={20} />
             </a>
           </div>
         </div>

@@ -16,13 +16,27 @@ export function Verticales() {
           <h2 className="section-title">Nuestras verticales de acción</h2>
         </div>
         <div className="triada-grid stagger">
-          {verticalesData.map((v) => (
-            <div key={v.title} className="triada-card reveal" style={{ '--i': v.delay } as React.CSSProperties}>
-              <div className={`triada-icon ${v.color}`}>{iconComponents[v.icon]}</div>
-              <h3>{v.title}</h3>
-              <p>{v.text}</p>
-            </div>
-          ))}
+          {verticalesData.map((v) => {
+            const borderColor = 
+              v.color === 'rosa-bg' ? 'var(--rosa)' : 
+              v.color === 'amarillo-bg' ? 'var(--amarillo-hover)' : 
+              v.color === 'verde-bg' ? 'var(--verde)' : 'transparent';
+            
+            return (
+              <div 
+                key={v.title} 
+                className="triada-card reveal" 
+                style={{ 
+                  '--i': v.delay, 
+                  borderTop: `4px solid ${borderColor}` 
+                } as React.CSSProperties}
+              >
+                <div className={`triada-icon ${v.color}`}>{iconComponents[v.icon]}</div>
+                <h3>{v.title}</h3>
+                <p>{v.text}</p>
+              </div>
+            );
+          })}
         </div>
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
           <Link to="/programas" className="btn-rosa">Quiero saber más</Link>

@@ -40,14 +40,13 @@ export const VisualProgress = ({
 }) => {
   return (
     <div className="vp-container animate-in slide-in-from-bottom duration-300">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-pink-100 rounded-lg text-pink-600">
-          <ClipboardCheck size={24} />
-        </div>
-        <div>
-          <h2 className="text-2xl font-black text-violet-900 uppercase tracking-tight" style={{ color: 'var(--violeta-deep)' }}>{headerTitle}</h2>
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{headerSubtitle}</p>
-        </div>
+      <div className="mb-10 text-center md:text-left">
+        <h2 className="text-2xl md:text-3xl font-black text-violet-900 uppercase tracking-tight" style={{ color: 'var(--violeta-deep)', display: 'inline-block', marginRight: '1rem' }}>
+          {headerTitle}
+        </h2>
+        <p className="text-xs text-slate-500 font-bold uppercase tracking-widest inline-block border-l pl-4 border-slate-200">
+          {headerSubtitle}
+        </p>
       </div>
 
       <div className="vp-grid">

@@ -29,7 +29,6 @@ export function ElSalto() {
             <div className="reveal">
               <Link to="/agenda" className="btn-rosa btn-hero">
                 {elSaltoPage.ctas.primary}
-                <ArrowRight className="inline-block ml-2" size={20} />
               </Link>
             </div>
           </div>

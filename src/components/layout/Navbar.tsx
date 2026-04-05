@@ -33,7 +33,7 @@ export function Navbar() {
                 <use href="#petal" className="fch-petal p-yellow" fill="#FFF647" />
               </svg>
             </div>
-            <span>Fundación<br/>Consciencia<br/>Humana</span>
+            <span>Fundación<br />Consciencia<br />Humana</span>
           </Link>
           <ul className="navbar-links">
             {siteConfig.nav.map((item) => (
@@ -44,12 +44,12 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="navbar-actions ml-10">
+          <div className="navbar-actions">
             <Link to="/agenda" className="btn-rosa btn-sm">
-              Agendar conversación
+              Agendar <span className="mobile-hidden-text">conversación</span>
             </Link>
           </div>
-          <button className="mobile-toggle" onClick={open} aria-label="Abrir menú" style={{ color: 'var(--texto)' }}>
+          <button className="mobile-toggle" onClick={open} aria-label="Abrir menú" style={{ color: 'var(--violeta-deep)' }}>
             <List size={24} weight="bold" />
           </button>
         </div>

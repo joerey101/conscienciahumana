@@ -22,7 +22,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Navigation */}
-          <div className="footer-col">
+          <div className="footer-col footer-nav-sitio">
             <h4 className="footer-h4">Sitio</h4>
             <ul className="footer-ul">
               {footerData.nav.map((item) => (
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Programs */}
-          <div className="footer-col">
+          <div className="footer-col footer-nav-programas">
             <h4 className="footer-h4">Programas</h4>
             <ul className="footer-ul">
               {footerData.programas.map((item) => (

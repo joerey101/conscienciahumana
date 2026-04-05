@@ -29,7 +29,6 @@ export function UnaMirada() {
             <div className="reveal">
               <Link to="/agenda" className="btn-azul btn-hero" style={{ background: 'var(--azul)', color: 'white', padding: '1rem 2.5rem', borderRadius: '50px', fontWeight: '700', textDecoration: 'none' }}>
                 {unaMiradaPage.ctas.primary}
-                <ArrowRight className="inline-block ml-2" size={20} />
               </Link>
             </div>
           </div>

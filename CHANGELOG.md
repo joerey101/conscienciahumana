@@ -2,6 +2,69 @@
 
 Este documento registra cronológicamente todas las mejoras, correcciones y nuevas funcionalidades implementadas en el sitio web de la Fundación Consciencia Humana.
 
+---
+
+## [Sesión Mobile & UI] - 2026-04-04
+
+### Corrección crítica — Navbar rota en mobile
+**Problema:** En las páginas `/programas` y `/organizaciones`, el botón "Agendar" y el ícono hamburguesa desaparecían en mobile. Solo se veía el logo.
+
+**Causa raíz:** La sección "Formatos" de Organizaciones tenía pills (etiquetas) sin `flex-wrap`. Al renderizarse en una sola fila horizontal, desbordaban 299px hacia la izquierda, rompiendo el `position: fixed` de la navbar en navegadores mobile.
+
+**Fix — `src/styles/globals.css`:**
+```css
+.flex-wrap   { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+```
+Agregadas en la PREMIUM UTILITY LAYER, junto a `.flex-col` y `.flex-row`.
+
+---
+
+### Rediseño — Sección "Marco Rector" en `/programas`
+**Archivo:** `src/pages/Programas.tsx`
+
+- Eliminado el contenedor tipo card blanco con borde
+- Pills de subestructura con `flex: 1` cada una → distribución igual en toda la línea
+- Botón rosa centrado debajo, ancho 70%, estilo bloque (`display: block`)
+- Sin contenedor wrapper, diseño limpio sin bordes
+
+---
+
+### Eliminación global de íconos ArrowRight en botones
+**Archivos modificados:**
+| Archivo | Botones afectados |
+|---|---|
+| `src/pages/Agenda.tsx` | Submit formulario + CTA Calendly |
+| `src/pages/Organizaciones.tsx` | CTA hero |
+| `src/pages/programas/ElSalto.tsx` | 2 botones (Agenda + Programas) |
+| `src/pages/programas/AutoevaluacionActivacion.tsx` | 2 botones |
+| `src/pages/programas/UnaMirada.tsx` | 2 botones |
+| `src/pages/Programas.tsx` | Import eliminado |
+
+Criterio: ArrowRight en botones es redundante con la acción del CTA. Se mantienen textos tipo "Leer reflexión →" en links de texto (Bitácora).
+
+---
+
+### Cards "Para Organizaciones" en `/programas` — Mejoras mobile
+**Archivo:** `src/pages/Programas.tsx`
+
+**Cambios en los 4 cards de la sección "Programas para equipos y organizaciones":**
+
+1. **Íconos ocultos en mobile, visibles en desktop**
+   - De `flex` a `hidden md:flex` en el div del ícono
+   - Sin ícono visible en pantallas < 768px
+
+2. **Tag uppercase movido sobre el título negro**
+   - Antes: `LIDERAZGO` aparecía debajo de la descripción
+   - Ahora: aparece como primer elemento dentro del card, antes del `<h4>`
+   - Agregado `inline-block mb-3` para correcto espaciado
+
+3. **Margen izquierdo en mobile**
+   - `pl-1 md:pl-0` en el div de contenido
+   - Compensa visualmente la ausencia del ícono en mobile
+
+---
+
 ## [Sesión Actual] - 2026-03-02
 ### Planificado
 - **Punto de Partida:** Creación de este CHANGELOG para seguimiento de hitos.
