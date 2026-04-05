@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { CheckCircle, ArrowRight, MessageSquare, Phone, Mail, AlertCircle, Loader2 } from 'lucide-react'
+import { CheckCircle, MessageSquare, Phone, Mail, AlertCircle, Loader2 } from 'lucide-react'
 import { agendaPage, siteConfig } from '../data/site'
 
 export function Agenda() {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
-import { Users, Target, Activity, ShieldCheck, MessageSquare, ArrowRight } from 'lucide-react'
+import { Users, Target, Activity, ShieldCheck, MessageSquare } from 'lucide-react'
 import { organizacionesPage } from '../data/site'
 
 export function Organizaciones() {
