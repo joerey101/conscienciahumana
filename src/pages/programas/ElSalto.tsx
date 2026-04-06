@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../../components/seo/PageSEO'
+import { SchemaElSalto } from '../../components/seo/SchemaElSalto'
 import { useRevealAnimation } from '../../hooks/useRevealAnimation'
 import { CheckCircle, Zap, ArrowRight, Target, ShieldCheck, Sparkles } from 'lucide-react'
 import { elSaltoPage } from '../../data/site'
@@ -15,6 +16,7 @@ export function ElSalto() {
         canonicalUrl="https://conscienciahumana.com/programas/el-salto-de-tu-vida"
         ogImage="https://conscienciahumana.com/img/elsalto-hero.png"
       />
+      <SchemaElSalto />
 
       {/* Hero */}
       <section className="section section-hero bg-[#FDF9F3]">

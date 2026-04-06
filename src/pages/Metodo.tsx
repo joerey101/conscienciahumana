@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../components/seo/PageSEO'
+import { SchemaMetodo } from '../components/seo/SchemaMetodo'
 import { useRevealAnimation } from '../hooks/useRevealAnimation'
 import { Eye, Zap, Anchor, CheckCircle } from 'lucide-react'
 import { VisualProgress } from '../components/premium/VisualProgress'
@@ -15,6 +16,7 @@ export function Metodo() {
         description={metodoPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/metodo"
       />
+      <SchemaMetodo />
 
       {/* Hero */}
       <section className="section section-hero bg-[#FDF9F3]">

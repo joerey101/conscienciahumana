@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../../components/seo/PageSEO'
+import { SchemaAutoevaluacion } from '../../components/seo/SchemaAutoevaluacion'
 import { useRevealAnimation } from '../../hooks/useRevealAnimation'
 import { CheckCircle, ArrowRight, ClipboardCheck, Sparkles, Target, Zap } from 'lucide-react'
 import { autoevaluacionPage } from '../../data/site'
@@ -14,6 +15,7 @@ export function AutoevaluacionActivacion() {
         description={autoevaluacionPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/programas/proceso-de-autoevaluacion-y-activacion-interior"
       />
+      <SchemaAutoevaluacion />
 
       {/* Hero */}
       <section className="section section-hero bg-[#FDF9F3]">

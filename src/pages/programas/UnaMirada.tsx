@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageSEO } from '../../components/seo/PageSEO'
+import { SchemaUnaMirada } from '../../components/seo/SchemaUnaMirada'
 import { useRevealAnimation } from '../../hooks/useRevealAnimation'
 import { CheckCircle, ArrowRight, Heart, Users, MessageSquare, Shield } from 'lucide-react'
 import { unaMiradaPage } from '../../data/site'
@@ -14,6 +15,7 @@ export function UnaMirada() {
         description={unaMiradaPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/programas/una-mirada-hacia-el-interior"
       />
+      <SchemaUnaMirada />
 
       {/* Hero */}
       <section className="section section-hero bg-[#F3F8FD]">
