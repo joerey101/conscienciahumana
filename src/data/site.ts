@@ -2,7 +2,7 @@ export const siteConfig = {
   contactEmail: 'contacto@conscienciahumana.com',
   siteUrl: 'https://conscienciahumana.com',
   orgName: 'Fundación Consciencia Humana',
-  formspreeId: 'mlgoppeo',
+  formspreeId: 'xwvwykdo',
   seo: {
     title: 'Fundación Consciencia Humana | Experiencias Transformadoras',
     description: 'Experiencias transformadoras para personas y equipos. Retiros, programas B2B y charlas abiertas para reconectarte con tu propósito y bienestar integral.',
