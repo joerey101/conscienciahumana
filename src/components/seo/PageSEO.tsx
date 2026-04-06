@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
+const DEFAULT_OG_IMAGE = 'https://conscienciahumana.com/img/hero-sunrise.png';
+
 interface PageSEOProps {
   title: string;
   description: string;
@@ -8,6 +10,8 @@ interface PageSEOProps {
 }
 
 export function PageSEO({ title, description, canonicalUrl, ogImage }: PageSEOProps) {
+  const image = ogImage ?? DEFAULT_OG_IMAGE;
+
   return (
     <Helmet>
       <title>{title}</title>
@@ -17,10 +21,11 @@ export function PageSEO({ title, description, canonicalUrl, ogImage }: PageSEOPr
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
     </Helmet>
   );
 }

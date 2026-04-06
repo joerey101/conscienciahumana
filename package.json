@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --mode ssr && node scripts/prerender.js",
+    "build:client": "tsc -b && vite build",
+    "build:ssr": "vite build --mode ssr",
+    "prerender": "node scripts/prerender.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --outDir dist/client"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

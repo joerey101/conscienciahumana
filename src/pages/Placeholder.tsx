@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 
 export function Placeholder({ title }: { title: string }) {
   return (
     <main className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 bg-[#FDF9F3]">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="max-w-2xl mx-auto py-20">
 
         

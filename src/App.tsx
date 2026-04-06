@@ -18,6 +18,7 @@ import { Sumate } from './components/sections/Sumate'
 
 import { useRevealAnimation } from './hooks/useRevealAnimation'
 import { PageSEO } from './components/seo/PageSEO'
+import { SchemaOrg } from './components/seo/SchemaOrg'
 import { Placeholder } from './pages/Placeholder'
 import { Metodo } from './pages/Metodo'
 import { Organizaciones } from './pages/Organizaciones'
@@ -31,11 +32,13 @@ import { Agenda } from './pages/Agenda'
 function Home() {
   return (
     <main>
-      <PageSEO 
+      <PageSEO
         title="Consciencia Humana | Claridad, activación y coherencia"
         description="Procesos de transformación para personas, equipos y organizaciones que buscan más claridad, dirección, hábitos conscientes y coherencia en su forma de vivir y liderar."
         canonicalUrl="https://conscienciahumana.com/"
+        ogImage="https://conscienciahumana.com/img/hero-sunrise.png"
       />
+      <SchemaOrg />
       <Hero />
       <Conversacion />
       <Mision />

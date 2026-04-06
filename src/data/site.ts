@@ -22,7 +22,7 @@ export const siteConfig = {
 
 export const metodoPage = {
   seo: {
-    title: "Método | Reconocer, activar y sostener el cambio",
+    title: "Método | Reconocer, activar y sostener el cambio | Consciencia Humana",
     description: "Conocé el método de Consciencia Humana: un proceso de autoevaluación, activación y sostenimiento para transformar hábitos, dirección y forma de habitar la vida y el trabajo."
   },
   hero: {
@@ -102,7 +102,7 @@ export const metodoPage = {
 
 export const programasPage = {
   seo: {
-    title: "Programas | Transformación personal y grupal aplicada",
+    title: "Programas | Transformación personal y grupal aplicada | Consciencia Humana",
     description: "Explorá los programas de Consciencia Humana para personas, grupos y organizaciones: procesos guiados de claridad, activación, hábitos, bienestar y coherencia."
   },
   hero: {
@@ -187,7 +187,7 @@ export const programasPage = {
 
 export const elSaltoPage = {
   seo: {
-    title: "El Salto de tu VIDA | Programa de evolución personal",
+    title: "El Salto de tu VIDA | Programa de evolución personal | Consciencia Humana",
     description: "Un proceso de evolución personal para reconocer la incomodidad actual, activar nuevas respuestas y sostener una coherencia más consciente en la vida cotidiana."
   },
   hero: {
@@ -223,7 +223,7 @@ export const elSaltoPage = {
 
 export const autoevaluacionPage = {
   seo: {
-    title: "Autoevaluación y Activación Interior | Programa guiado",
+    title: "Autoevaluación y Activación Interior | Programa guiado | Consciencia Humana",
     description: "Un recorrido guiado para observar con honestidad el presente, ordenar prioridades, activar hábitos y construir una nueva dirección personal con más coherencia."
   },
   hero: {
@@ -255,7 +255,7 @@ export const autoevaluacionPage = {
 
 export const unaMiradaPage = {
   seo: {
-    title: "Una Mirada hacia el Interior | Programa grupal y comunitario",
+    title: "Una Mirada hacia el Interior | Programa grupal y comunitario | Consciencia Humana",
     description: "Programa de desarrollo emocional, conversación y bienestar integral para grupos, organizaciones sociales y contextos que requieren cuidado, escucha y metodología adaptable."
   },
   hero: {
@@ -290,7 +290,7 @@ export const unaMiradaPage = {
 
 export const organizacionesPage = {
   seo: {
-    title: "Organizaciones | Liderazgo, bienestar y cohesión de equipos",
+    title: "Organizaciones | Liderazgo, bienestar y cohesión de equipos | Consciencia Humana",
     description: "Programas para equipos y organizaciones que buscan trabajar liderazgo, bienestar, vínculos, cultura, comunicación y transformación humana aplicada."
   },
   hero: {
@@ -355,7 +355,7 @@ export const organizacionesPage = {
 
 export const nosotrosPage = {
   seo: {
-    title: "Nosotros | Quiénes somos en Consciencia Humana",
+    title: "Nosotros | Quiénes somos | Consciencia Humana",
     description: "Conocé la visión, el criterio y la forma de acompañar de Consciencia Humana: profundidad con cuidado, humanidad con estructura y procesos con sentido."
   },
   hero: {
@@ -399,7 +399,7 @@ export const nosotrosPage = {
 
 export const agendaPage = {
   seo: {
-    title: "Agenda | Agendá una conversación con Consciencia Humana",
+    title: "Agenda | Agendá una conversación | Consciencia Humana",
     description: "Reservá una conversación inicial para explorar programas personales, propuestas para organizaciones o posibles alianzas con Consciencia Humana."
   },
   hero: {

@@ -22,9 +22,15 @@ export function Agenda() {
     contacto_preferencia: "mail"
   })
 
+  const trackGA4Event = (eventName: string, params?: Record<string, string>) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', eventName, params)
+    }
+  }
+
   const handleCardClick = (value: string) => {
     setSelectedType(value)
-    // Scroll al formulario (suave)
+    trackGA4Event('agenda_tipo_selected', { tipo_consulta: value })
     document.getElementById("formulario-contacto")?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -38,6 +44,7 @@ export function Agenda() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus("submitting")
+    trackGA4Event('form_submit_attempt', { form_type: 'agenda', tipo_consulta: selectedType || 'no_especificado' })
 
     const payload = {
       ...formData,
@@ -57,15 +64,18 @@ export function Agenda() {
 
       if (response.ok) {
         setStatus("success")
+        trackGA4Event('form_submit_success', { form_type: 'agenda', tipo_consulta: selectedType || 'no_especificado' })
         setFormData({
           nombre: "", email: "", telefono: "", ubicacion: "", motivo_general: "", motivo_detalle: "", contacto_preferencia: "mail"
         })
         setSelectedType("")
       } else {
         setStatus("error")
+        trackGA4Event('form_submit_error', { form_type: 'agenda' })
       }
     } catch (error) {
       setStatus("error")
+      trackGA4Event('form_submit_error', { form_type: 'agenda' })
     }
   }
 

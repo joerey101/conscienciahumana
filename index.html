@@ -11,20 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
 
-    <!-- SEO & Social -->
-    <link rel="canonical" href="https://conscienciahumana.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://conscienciahumana.com/" />
-    <meta property="og:title" content="Fundación Consciencia Humana | Experiencias Transformadoras" />
-    <meta property="og:description" content="Experiencias transformadoras para personas y equipos. Retiros, programas B2B y charlas abiertas para reconectarte con tu propósito y bienestar integral." />
-    <meta property="og:image" content="https://conscienciahumana.com/img/hero-sunrise.png" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://conscienciahumana.com/" />
-    <meta property="twitter:title" content="Fundación Consciencia Humana | Experiencias Transformadoras" />
-    <meta property="twitter:description" content="Experiencias transformadoras para personas y equipos. Retiros, programas B2B y charlas abiertas para reconectarte con tu propósito y bienestar integral." />
-    <meta property="twitter:image" content="https://conscienciahumana.com/img/hero-sunrise.png" />
+    <!-- SEO & Social — inyectado por ruta en el build (scripts/prerender.js) -->
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!--app-head-->
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5VHP39B2XB"></script>
@@ -36,7 +27,7 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

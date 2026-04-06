@@ -9,10 +9,11 @@ export function ElSalto() {
 
   return (
     <main className="page-programa-individual">
-      <PageSEO 
+      <PageSEO
         title={elSaltoPage.seo.title}
         description={elSaltoPage.seo.description}
         canonicalUrl="https://conscienciahumana.com/programas/el-salto-de-tu-vida"
+        ogImage="https://conscienciahumana.com/img/elsalto-hero.png"
       />
 
       {/* Hero */}

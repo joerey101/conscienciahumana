@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /impacto
+Disallow: /recursos
+
+Sitemap: https://conscienciahumana.com/sitemap.xml
